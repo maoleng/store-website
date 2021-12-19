@@ -2,9 +2,10 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" href="../indexx.css">
+	<link rel="stylesheet" href="../indexxx.css">
 </head>
 <body bgcolor="ABB1BA">
+
 
 <?php 
 require '../connect_database.php';
@@ -12,8 +13,8 @@ $id = $_GET['id'];
 $sql_command_select_products = "select * from products where id = '$id' ";
 $query_sql_command_select_products = mysqli_query($connect_database, $sql_command_select_products);
 
-$sql_command_select_manufactures = "select * from manufactures";
-$query_sql_command_select_manufactures = mysqli_query($connect_database, $sql_command_select_manufactures);
+$sql_command_select_manufacturers = "select * from manufacturers";
+$query_sql_command_select_manufacturers = mysqli_query($connect_database, $sql_command_select_manufacturers);
 
 $array_products = mysqli_fetch_array($query_sql_command_select_products);
 
@@ -45,22 +46,22 @@ $array_products = mysqli_fetch_array($query_sql_command_select_products);
 			Giá thành
 			<input type="text" name="price" value = "<?php echo $array_products['price'] ?>"><br>
 			Đổi ảnh mới
-			<input type="file" name="picture_new"><br>
+			<input type="file" name="image_new"><br>
 			Hoặc giữ hình ảnh cũ
-			<img src="<?php echo $array_products['picture'] ?>" width = "100px"><br>
-			<input type="hidden" name="picture_old" value="<?php echo $array_products['picture'] ?>"><br>
+			<img src="<?php echo $array_products['image'] ?>" width = "100px"><br>
+			<input type="hidden" name="image_old" value="<?php echo $array_products['image'] ?>"><br>
 			Nhà sản xuất
 			
 			
-			<select name = "manufactures_id">
-				<?php foreach ($query_sql_command_select_manufactures as $array_manufactures): ?>
+			<select name = "manufacturer_id">
+				<?php foreach ($query_sql_command_select_manufacturers as $array_manufacturers): ?>
 					<option 
-						value = "<?php echo $array_manufactures['id'] ?>"
-						<?php if($array_products['manufactures_id'] == $array_manufactures['id']) { ?>
+						value = "<?php echo $array_manufacturers['id'] ?>"
+						<?php if($array_products['manufacturer_id'] == $array_manufacturers['id']) { ?>
 						selected
 						<?php } ?>
 					>
-						<?php echo $array_manufactures['name'] ?>
+						<?php echo $array_manufacturers['name'] ?>
 					</option>
 				<?php endforeach ?>
 			</select>

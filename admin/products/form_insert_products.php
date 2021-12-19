@@ -2,13 +2,13 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" href="../indexx.css">
+	<link rel="stylesheet" href="../indexxx.css">
 </head>
 <body bgcolor="ABB1BA">
 
 <?php 
 require '../connect_database.php';
-$sql_command_select = "select * from manufactures";
+$sql_command_select = "select * from manufacturers";
 $query_sql_command_select = mysqli_query($connect_database, $sql_command_select);
 
 
@@ -39,14 +39,14 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 			Giá thành
 			<input type="text" name="price"><br>
 			Hình ảnh
-			<input type="file" name="picture"><br>
+			<input type="file" name="image"><br>
 			Nhà sản xuất
 			
 			
-			<select name = "manufactures_id">
-				<?php foreach ($query_sql_command_select as $array_manufactures): ?>
-					<option value = "<?php echo $array_manufactures['id'] ?>">
-						<?php echo $array_manufactures['name'] ?>
+			<select name = "manufacturer_id">
+				<?php foreach ($query_sql_command_select as $array_manufacturers): ?>
+					<option value = "<?php echo $array_manufacturers['id'] ?>">
+						<?php echo $array_manufacturers['name'] ?>
 					</option>
 				<?php endforeach ?>
 			</select>

@@ -3,8 +3,8 @@ $id = $_POST['id'];
 $name = $_POST['name'];
 $description = $_POST['description'];
 $price = $_POST['price'];
-$picture_new = $_FILES['picture_new'];
-$manufactures_id = $_POST['manufactures_id'];
+$image_new = $_FILES['image_new'];
+$manufacturer_id = $_POST['manufacturer_id'];
 
 if (empty($id)){
 	header('location:index_products.php?error=Chưa nhập id bài cần sửa');
@@ -18,14 +18,14 @@ if (empty($name) || empty($description) || empty($price) ){
 
 
 
-if ($picture_new['size'] > 0) {
-	$folder = 'pictures/';
-	$file_type = explode('.', $picture_new["name"])[1];
+if ($image_new['size'] > 0) {
+	$folder = 'images/';
+	$file_type = explode('.', $image_new["name"])[1];
 	$file_name = time() . '.' . $file_type;
 	$file_path = $folder . $file_name;
-	move_uploaded_file($picture_new["tmp_name"], $file_path);
+	move_uploaded_file($image_new["tmp_name"], $file_path);
 } else {
-	$file_path = $_POST['picture_old'];	
+	$file_path = $_POST['image_old'];	
 
 
 }
@@ -35,8 +35,8 @@ $sql_command_update = "update products set
 name = '$name',
 description = '$description',
 price = '$price',
-picture = '$file_path',
-manufactures_id = '$manufactures_id' where id = '$id' ";
+image = '$file_path',
+manufacturer_id = '$manufacturer_id' where id = '$id' ";
 
 mysqli_query($connect_database, $sql_command_update);
 

@@ -1,10 +1,10 @@
 
-<link rel="stylesheet" href="indexx.css">
+<link rel="stylesheet" href="indexxx.css">
 
 
 
 <div class="card">	
-	<div class="header">
+	<div class="header_menu">
     	<h3>Menu</h3>
     </div>
 
@@ -14,10 +14,10 @@
 				Quản lí nhà sản xuất
 				<ul>
 					<li>
-						<a href="../manufactures/index_manufactures.php">Trang chủ</a>	
+						<a href="../manufacturers/index_manufacturers.php">Trang chủ</a>	
 					</li>
 					<li>
-						<a href="../manufactures/form_insert_manufactures.php">Thêm nhà sản xuất</a>
+						<a href="../manufacturers/form_insert_manufacturers.php">Thêm nhà sản xuất</a>
 					</li>
 				</ul>
 			</li>

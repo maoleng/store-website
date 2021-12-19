@@ -2,14 +2,14 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" href="../indexx.css">
+	<link rel="stylesheet" href="../indexxx.css">
 </head>
-<body bgcolor="ABB1BA">
+<body>
 <?php 
 
 require '../connect_database.php';
 
-$sql_command_select = "select products.*, manufactures.name as 'manufactures_name' from products join manufactures on manufactures.id = products.manufactures_id";
+$sql_command_select = "select products.*, manufacturers.name as 'manufacturers_name' from products join manufacturers on manufacturers.id = products.manufacturer_id";
 $query_sql_command_select = mysqli_query($connect_database, $sql_command_select);
 
 
@@ -18,9 +18,14 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 
 <div class = "all">
 	<div class="top">
+		<h1 class = "header">Đây là giao diện quản lí sản phẩm</h1>
 		<div class = "login">
 			<a href="https://google.com">Đăng nhập</a>
 		</div>
+		<form class = "form_search">
+			Tìm kiếm
+			<input type="search" name="search" placeholder="nồi, chổi, ...">
+		</form>
 	</div> 
 
 	<div class="left">
@@ -28,9 +33,8 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 	</div>
 
 	<div class = "right">
-		<h1 style="text-align: center;">Đây là giao diện quản lí sản phẩm</h1>
 		<?php require '../validate.php' ?>
-		<table border="1" width="100%" >
+		<table class = table>
 			<tr>
 				<th>Mã</th>
 				<th>Tên sản phẩm</th>
@@ -46,9 +50,9 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 				<td><?php echo $array_products['name'] ?></td>
 				<td><?php echo $array_products['price'] ?></td>
 				<td>
-					<img src="<?php echo $array_products['picture'] ?>" height = "200px">
+					<img src="<?php echo $array_products['image'] ?>" height = "100px">
 				</td>
-				<td><?php echo $array_products['manufactures_name'] ?></td>
+				<td><?php echo $array_products['manufacturers_name'] ?></td>
 				<td>
 					<a href="form_update_products.php?id=<?php echo $array_products['id'] ?>">Sửa</a>
 				</td>
