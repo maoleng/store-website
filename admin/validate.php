@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="indexxx.css">
+<link rel="stylesheet" href="indexx.css">
 
 
 <?php if (isset($_GET['error'])){ ?>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" href="../indexxx.css">
+	<link rel="stylesheet" href="../indexx.css">
 </head>
 <body>
 <?php 
