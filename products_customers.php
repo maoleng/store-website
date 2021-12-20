@@ -11,7 +11,7 @@
 		<div class = "product">
 			<h1><?php echo $array_products['name'] ?></h1>
 			<br>
-			<img src="admin/products/<?php echo $array_products['picture'] ?>" height = 100px>
+			<img src="admin/products/<?php echo $array_products['image'] ?>" height = 100px>
 			<br>
 			$<?php echo $array_products['price'] ?>
 			<br>
