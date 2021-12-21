@@ -3,9 +3,10 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="index_customers.css">
+	<link rel="stylesheet" href="admin/style_validate.css">
 </head>
 <body bgcolor="ABB1BA">
-
+<?php require 'admin/validate.php' ?>
 <div class="all">
 	<?php require 'menu_customers.php' ?>
 
