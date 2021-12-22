@@ -7,7 +7,7 @@
 <body>
 <h1>Form đăng kí</h1>
 <?php require 'admin/validate.php' ?>
- 
+
 <form method = "post" action = "process_sign_up.php">
 	Họ và tên
 	<input type="text" name="name"><br>
