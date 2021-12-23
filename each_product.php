@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" href="index_customers.css">
+	<link rel="stylesheet" href="style_index_customers.css">
 </head>
 
 <body bgcolor="ABB1BA">

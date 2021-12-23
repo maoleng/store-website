@@ -16,6 +16,12 @@
 			$<?php echo $array_products['price'] ?>
 			<br>
 			<a href="each_product.php?id=<?php echo $array_products['id'] ?>">Xem chi tiết</a>
+			<br>
+
+			<?php if (isset($_SESSION['id'])) { ?>
+				<a href="process_add_to_cart.php?id=<?php echo $array_products['id'] ?>">Thêm vào giỏ hàng</a>
+			<?php }	 ?>
+
 		</div>
 
 
