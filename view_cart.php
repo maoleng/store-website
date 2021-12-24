@@ -7,8 +7,12 @@ session_start();
 <head>
 	<title></title>
 </head>
-<body>
+<body bgcolor = "#FFFFFFF">
 	<?php $cart = $_SESSION['cart'];
+	if (empty($cart)) {
+		$_SESSION['error'] = "Chưa có gì trong giỏ hàng";
+		echo $_SESSION['error'];
+	}
 
 	?>
 
@@ -31,8 +35,15 @@ session_start();
 					</td>
 					<td><?php echo $array_products['name'] ?></td>
 					<td><?php echo $array_products['price'] ?></td>
-					<td><?php echo $array_products['quantity']; ?></td>
+					<td>
+						<a href="process_update_quantity_in_cart.php?id=<?php echo $id ?>&type=decrease">-</a>
+						<?php echo $array_products['quantity']; ?>
+						<a href="process_update_quantity_in_cart.php?id=<?php echo $id ?>&type=increase">+</a>
+					</td>
 					<td><?php echo $array_products['quantity'] * $array_products['price'] ?></td>
+					<td>
+						<a href="process_delete_cart.php?id=<?php echo $id ?>">Xóa</a>
+					</td>
 				</tr>
 
 			<?php endforeach ?>
