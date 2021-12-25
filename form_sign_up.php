@@ -13,11 +13,15 @@
 	<input type="text" name="name"><br>
 	Email
 	<input type="email" name="email"><br>
+	Số điện thoại
+	<input type="text" name="phone"><br>
 	Giới tính<br>
 	<input type="radio" value = "Nam" name="gender">Nam<br>
 	<input type="radio" value = "Nữ" name="gender">Nữ<br>
 	Ngày sinh
 	<input type="date" name="dob"><br>
+	Địa chỉ
+	<input type="text" name = "address"><br>
 	Mật khẩu
 	<input type="password" name="password"><br>
 	<button>Đăng ký</button>

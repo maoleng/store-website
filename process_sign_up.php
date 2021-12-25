@@ -4,6 +4,8 @@ $email = $_POST['email'];
 $gender = $_POST['gender'];
 $dob = $_POST['dob'];
 $password = $_POST['password'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
 
 require 'admin/connect_database.php';
 
@@ -16,8 +18,8 @@ if ($count_email == 1) {
 	exit;
 }
 
-$sql_command_insert = "insert into customers (name, email, gender, dob, password) 
-value ('$name', '$email', '$gender', '$dob', '$password') ";
+$sql_command_insert = "insert into customers (name, email, gender, dob, password, phone, address) 
+value ('$name', '$email', '$gender', '$dob', '$password', '$phone', '$address') ";
 mysqli_query($connect_database, $sql_command_insert);	
 
 $sql_command_select = "select id from customers where email = '$email' ";

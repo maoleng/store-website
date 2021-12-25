@@ -15,6 +15,8 @@
 
 
 		<?php } else { ?>
+			Xin chào bạn 
+			<?php echo $_SESSION['name'] ?>
 			<li>
 				<a href="process_sign_out.php">Đăng xuất</a>
 			</li>
