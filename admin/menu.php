@@ -21,6 +21,7 @@
 					</li>
 				</ul>
 			</li>
+			
 			<li>
 				Quản lí sản phẩm
 				<ul>
@@ -31,6 +32,11 @@
 						<a href="../products/form_insert_products.php">Thêm sản phẩm</a>
 					</li>
 				</ul>
+			</li>
+
+			<li>
+				
+				<a href="../receipts/index_receipts.php">Quản lí hóa đơn</a>
 			</li>
 		</ul>
 	</div>
