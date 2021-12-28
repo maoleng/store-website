@@ -1,3 +1,4 @@
+<?php require '../check_admin_login.php' ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,8 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 		<th>Thông tin người đặt</th>
 		<th>Trạng thái</th>
 		<th>Tổng tiền</th>
+		<th>Xem chi tiết</th>
+		<th>Duyệt</th>
 	</tr>
 
 	<?php foreach ($query_sql_command_select as $array_receipts) : ?>
@@ -57,18 +60,23 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 			
 		</td>
 		<td><?php echo $array_receipts['total_price'] ?></td>
+		<td>
+			<a href="detail_receipt.php?id=<?php echo $array_receipts['id'] ?>">
+				Xem
+			</a>
+		</td>
+		<td>
+			<a href="update_receipt.php?id=<?php echo $array_receipts['id'] ?>&status=1">Duyệt đơn hàng</a>
+			<br>
+			<a href="update_receipt.php?id=<?php echo $array_receipts['id'] ?>&status=2">Hủy đơn hàng</a>
+		</td>
 
 	</tr>
 	
+
+
 	<?php endforeach ?>
 	 
-
-	
-
-	
-
-	
-
 
 </table>
 

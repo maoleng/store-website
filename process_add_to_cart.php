@@ -19,3 +19,4 @@ if ( empty($_SESSION['cart'][$id]) ) {
 	$_SESSION['cart'][$id]['quantity']++;		
 }
 
+

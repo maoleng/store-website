@@ -53,6 +53,8 @@ session_start();
 						$money_of_all += $money_of_thing;
 					?>
 
+
+				
 			<?php endforeach ?>
 		</tr>
 
