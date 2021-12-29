@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="indexxx.css">
+<link rel="stylesheet" href="index1.css">
 
 
 
@@ -36,7 +36,7 @@
 
 			<li>
 				
-				<a href="../receipts/index_receipts.php">Quản lí hóa đơn</a>
+				<a href="../receipts/index_receipts.php"><span style = "color: white">Quản lí hóa đơn</span></a>
 			</li>
 		</ul>
 	</div>

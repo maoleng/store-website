@@ -6,7 +6,8 @@ $password = $_POST['password'];
 
 require 'connect_database.php';
 
-$sql_command_select = "select * from admin where email = '$email' and password = '$password' limit 1";
+$sql_command_select = "select * from admins where email = '$email' and password = '$password' limit 1";
+
 $query_sql_command_select = mysqli_query($connect_database, $sql_command_select);
 
 if ( mysqli_num_rows($query_sql_command_select) == 1) {
