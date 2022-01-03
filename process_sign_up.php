@@ -22,6 +22,15 @@ $sql_command_insert = "insert into customers (name, email, gender, dob, password
 value ('$name', '$email', '$gender', '$dob', '$password', '$phone', '$address') ";
 mysqli_query($connect_database, $sql_command_insert);	
 
+
+//gửi email báo đăng kí thành công
+require 'mail.php';
+$title = "Đăng kí thành công";
+$content = "Chúc mừng bạn đã đăng kí thành công, phần thưởng iphone promax của bạn tại link: <a href = 'nhacai88uytinhangdau.net'>Link uy tín</a>";
+send_mail($email, $name, $title, $content);
+
+
+
 $sql_command_select = "select id from customers where email = '$email' ";
 $query_sql_command_select = mysqli_query($connect_database, $sql_command_select);
 $id = mysqli_fetch_array($query_sql_command_select)['id'];
