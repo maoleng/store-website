@@ -49,6 +49,7 @@ if (isset($_SESSION['error'])) {
 	<input type="password" name="password"><br>
 	<input type="checkbox" name="login_renember">
 	Ghi nhớ đăng nhập<br>
+	<a href = "form_forgot_password.php">Quên mật khẩu</a>
 	<button>Đăng nhập</button>
 </form>
 
