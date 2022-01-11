@@ -8,14 +8,12 @@ $image_new = $_FILES['image_new'];
 $manufacturer_id = $_POST['manufacturer_id'];
 
 if (empty($id)){
-	$_SESSION['error'] = 'Chưa nhập id sản phẩm cần sửa';
-	header('location:form_update_products.php');
+	header('location:index_products.php?error=Chưa nhập id bài cần sửa');
 	exit;
 }
 
 if (empty($name) || empty($description) || empty($price) ){
-	$_SESSION['error'] = 'Chưa nhập đầy đủ thông tin';
-	header('location:form_update_products.php');
+	header('location:index_products.php?error=Chưa nhập đầy đủ thông tin');
 	exit;
 }
 
@@ -46,11 +44,9 @@ mysqli_query($connect_database, $sql_command_update);
 $error = mysqli_error($connect_database);
 
 if (empty($error)) {
-	$_SESSION['success'] = 'Sửa sản phẩm thành công';
-	header('location:index_products.php');	
+	header('location:index_products.php?success=Sửa sản phẩm thành công');	
 }else {
-	$_SESSION['error'] = 'Lỗi truy vấn';
-	header('location:index_products.php');	
+	header('location:index_products.php?error=Lỗi truy vấn');	
 }
 
 mysqli_close($connect_database); 

@@ -1,0 +1,30 @@
+/*-------------------------------------bố cục trang khách hàng----------------------------------------------*/
+.all {
+	width: 100%;
+	height: 100vh;
+}
+.top {
+	width: 100%;
+	height: 20vh;
+	background-color: white;
+}
+.mid {
+	width: 100%;
+	height: 70vh;
+}
+.bot {
+	width: 100%;
+	height: 10vh;
+	background-color: #6D6E6A;
+}
+
+/*-------------------------------------bố cục phần hiển thị sản phẩm----------------------------------------------*/
+.product {
+	width: 33%;
+	float:left;
+	border: 1px solid black;
+}
+
+.each_product {
+	
+}

@@ -1,17 +1,15 @@
 <link rel="stylesheet" href="index1.css">
 
 
-<?php if (isset($_SESSION['error'])){ ?>
+<?php if (isset($_GET['error'])){ ?>
 	<div id = "status">
-		<span id = "span"><?php echo $_SESSION['error']; ?></span>
-		<?php unset($_SESSION['error']); ?>
+		<span id = "span"><?php echo $_GET['error']; ?></span>
 	</div>
 <?php } ?>
 
-<?php if (isset($_SESSION['success'])){ ?>
+<?php if (isset($_GET['success'])){ ?>
 	<div id = "status">
-		<span id = "span"><?php echo $_SESSION['success']; ?></span>
-		<?php unset($_SESSION['success']); ?>
+		<span id = "span"><?php echo $_GET['success']; ?></span>
 	</div>
 <?php } ?>
   

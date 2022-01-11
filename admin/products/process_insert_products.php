@@ -8,8 +8,7 @@ $image = $_FILES['image'];
 $manufacturers_id = $_POST['manufacturer_id'];
 
 if (empty($name) || empty($description) || empty($price) || empty($image) || empty($manufacturers_id) ) {
-	$_SESSION['error'] = 'Chưa điền đầy đủ thông tin';
-	header('location:form_insert_products.php');
+	header('location:form_insert_products.php?error=Chưa điền đầy đủ thông tin');
 	exit();
 }
 
@@ -32,11 +31,9 @@ mysqli_query($connect_database, $sql_command_insert);
 $error = mysqli_error($connect_database);
 
 if (empty($error)) {
-	$_SESSION['success'] = 'Thêm sản phẩm thành công';
-	header('location:index_products.php');	
+	header('location:index_products.php?success=Thêm sản phẩm thành công');	
 }else {
-	$_SESSION['error'] = 'Lỗi truy vấn';
-	header('location:index_products.php');	
+	header('location:index_products.php?error=Lỗi truy vấn');	
 }
  
 mysqli_close($connect_database);
