@@ -5,12 +5,9 @@
 	<title></title>
 </head>
 <body bgcolor="ABB1BA">
+<?php require '../menu.php'; ?>
+
 Đây là trang chủ admin
-<?php
-header('location:../products/index_products.php');
-?>
-
-
 
 </body>
 </html>
