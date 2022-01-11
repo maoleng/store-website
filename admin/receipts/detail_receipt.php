@@ -22,6 +22,7 @@ if ( $check !== 1 ) {
 	exit();
 }
 
+
 $sql_command_select = "select * from receipt_detail join products on receipt_detail.product_id = products.id where 	receipt_detail.receipt_id = $id";
 
 $query_sql_command_select = mysqli_query($connect_database, $sql_command_select);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 25, 2021 at 05:26 PM
+-- Generation Time: Jan 06, 2022 at 12:21 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.19
 
@@ -18,8 +18,30 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `trang_web_ban_hang`
+-- Database: `quan_ly_ban_hang`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` mediumtext NOT NULL,
+  `level` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `name`, `email`, `password`, `level`) VALUES
+(1, 'admin', 'admin@gmail.com', 'qwer1234', 0),
+(2, 'superadmin', 'superadmin@gmail.com', 'qwer1234', 1);
 
 -- --------------------------------------------------------
 
@@ -29,24 +51,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `customers` (
   `id` int NOT NULL,
-  `name` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `gender` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `gender` varchar(200) NOT NULL,
   `dob` date NOT NULL,
-  `email` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `phone` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `address` text COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `token` varchar(200) COLLATE utf8mb4_general_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `email` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `token` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `name`, `gender`, `dob`, `email`, `phone`, `address`, `password`, `token`) VALUES
-(1, 'Hydra', 'male', '2021-12-15', 'longthanh@gmail.com', '', '', 'Long1234', ''),
-(2, 'hydra', 'male', '2000-09-02', 'longthanh1@gmail.com', '', '', 'Long1234', 'user_61c02f2f3092f9.427462291639984943'),
-(4, 'Hữu Lộc', 'Nam', '2021-12-02', 'featur451@gmail.com', '0123456789', 'Phú Yên', 'qwer1234', NULL);
+INSERT INTO `customers` (`id`, `name`, `gender`, `dob`, `email`, `password`, `token`) VALUES
+(1, 'Hydra', 'male', '2021-12-15', 'longthanh@gmail.com', 'Long1234', 'user_61d6d260aacd66.476282551641468512'),
+(2, 'hydra', 'male', '2000-09-02', 'longthanh1@gmail.com', 'Long1234', 'user_61c99960006f46.425270491640601952'),
+(3, 'My Mi', 'male', '2021-11-29', 'abc@abc.abc', 'Abcd1234', 'user_61cbc3291fd306.214497391640743721'),
+(4, 'My My', 'male', '2022-01-19', 'admin123@gmail.com', 'Admin123', 'user_61d014557d9238.626900311641026645');
 
 -- --------------------------------------------------------
 
@@ -56,11 +77,11 @@ INSERT INTO `customers` (`id`, `name`, `gender`, `dob`, `email`, `phone`, `addre
 
 CREATE TABLE `manufacturers` (
   `id` int NOT NULL,
-  `name` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `address` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `phone` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
-  `image` varchar(200) COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `name` varchar(200) NOT NULL,
+  `address` varchar(200) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `image` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `manufacturers`
@@ -82,12 +103,12 @@ INSERT INTO `manufacturers` (`id`, `name`, `address`, `phone`, `image`) VALUES
 
 CREATE TABLE `products` (
   `id` int NOT NULL,
-  `name` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `description` text COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `description` mediumtext NOT NULL,
   `price` int NOT NULL,
-  `image` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(200) NOT NULL,
   `manufacturer_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `products`
@@ -95,7 +116,6 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `manufacturer_id`) VALUES
 (2, 'Cây lau nhà DMX CL005 ', 'Cây lau nhà có thân bằng inox cứng cáp, chiều dài 128 cm dễ sử dụng.\r\nTay cầm bọc nhựa chống trơn trượt, thân cây có khóa chắc chắn, có móc treo cất giữ.\r\nBông lau nhà bằng sợi cotton bền chắc, thấm hút tốt, giặt rửa dễ dàng.\r\nThương hiệu DMX - độc quyền Điện máy XANH, sản xuất tại Việt Nam.', 40000, 'images/1639849341.jpg', 8),
-(3, 'Cây lau nhà xoay 360 ĐỘ SUNHOUSE KS-MO350I', 'Chất liệu cao cấp, an toàn cho sức khỏe\r\nCán bằng inox 201 có tay cầm bọc nhựa PP chắc chắn\r\nBộ phận tạo chuyển động bằng thép và nhựa POM siêu bền\r\nBông lau bằng sợi Microfiber thấm hút nước tốt', 459000, 'images/1639849505.jpg', 9),
 (4, 'Nồi từ FISSLER PRO COLLECTION HIGH STOCK POT 28CM 14L', 'Nhập khẩu nguyên chiếc CHLB Đức - Made in Germany\r\nNồi từ Fissler làm từ vật liệu thép không gỉ chất lượng cao 18/10 dày, đặc, truyền nhiệt hiệu quả\r\nĐáy nồi Cookstar Allstove, nấu được trên mọi loại bếp, kể cả bếp từ, hạn chế cháy cục bộ, không cong vênh, lồi lõm\r\nLõi nhôm dày hoa lỏng ở 600ºC trước khi dập các lớp với nhau bởi một lực 1500 tấn\r\nĐường kính nồi 28cm\r\nTổng dung tích 14L\r\nTrọng lượng nồi 4.97Kg\r\nChiều cao nồi 24cm\r\nThước đo mực nước đến 12.5L\r\nVung inox thiết kế lõm lòng chảo giúp đối lưu hơi nước, chịu được 220ºC\r\nTay cầm cách nhiệt, thiết kế thẩm mỹ dạng đũa, cầm nắm thoải mái, chịu lực 150Kg\r\nMiệng rót chống tràn hiệu quả, cực khít với vung\r\nHiệu quả đun nấu nhanh, bảo toàn dinh dưỡng\r\nNồi nấu được trong lò nướng và vệ sinh an toàn với máy rửa bát.', 11500000, 'images/1639849625.jpg', 3),
 (5, 'Bộ nồi chảo Silit Pisa 10 Món', 'Nắp vung kính cường lực bền đẹp thuận tiện quan sát đồ ăn\r\nPhù hợp với mọi loại: bếp từ, bếp hồng ngoại…\r\nTỏa nhiệt đều, giữ nhiệt lâu\r\nAn toàn cho sức khỏe\r\nĐáy 3 lớp bắt từ nhanh giúp tiết kiệm điện\r\nXuất xứ: Nhập khẩu từ Đức', 6540000, 'images/1639849720.1000x1000', 4),
 (6, 'Cây lau nhà COTONG 90CM SIÊU SẠCH BODOCA', 'Xuất xứ: hàng Việt Nam\r\n\r\nBao gồm: cán, khung và giẻ\r\n\r\n– Chất liệu:\r\n\r\n+ Cán bằng inox, đầu kẹp inox\r\n\r\n+ Khung giẻ nhựa tối\r\n\r\n+ Giẻ bằng sợi Sợi Microfiber mềm, sợi cattong\r\n\r\n– Kích thước:\r\n\r\n+Cán: dài 1,5m\r\n\r\n+ Giẻ : (L)900mm x (H) 150 mm', 250000, 'images/1639849881.jpg', 7),
@@ -116,13 +136,24 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `manufact
 CREATE TABLE `receipts` (
   `id` int NOT NULL,
   `customer_id` int NOT NULL,
-  `receiver_name` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `receiver_phone` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `receiver_address` text COLLATE utf8mb4_general_ci NOT NULL,
+  `order_time` varchar(30) DEFAULT NULL,
+  `receiver_id` varchar(50) DEFAULT NULL,
+  `note` mediumtext,
   `status` int NOT NULL,
-  `order_time` timestamp NOT NULL,
-  `total_price` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `total` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `receipts`
+--
+
+INSERT INTO `receipts` (`id`, `customer_id`, `order_time`, `receiver_id`, `note`, `status`, `total`) VALUES
+(8, 1, '06-01-2022 06:44:17', '1', '							', 2, 29790000),
+(9, 1, '06-01-2022 06:49:21', '2', '							', 2, 1138000),
+(10, 1, '06-01-2022 07:15:35', '2', '							', 2, 18370000),
+(11, 1, '06-01-2022 07:15:58', '2', '							', 2, 23040000),
+(12, 1, '06-01-2022 07:16:12', '2', '							', 2, 649000),
+(13, 1, '06-01-2022 07:16:20', '2', '							', 3, 80000);
 
 -- --------------------------------------------------------
 
@@ -133,20 +164,71 @@ CREATE TABLE `receipts` (
 CREATE TABLE `receipt_detail` (
   `receipt_id` int NOT NULL,
   `product_id` int NOT NULL,
-  `quantity` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `quantity` tinyint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `receipt_detail`
+--
+
+INSERT INTO `receipt_detail` (`receipt_id`, `product_id`, `quantity`) VALUES
+(8, 4, 2),
+(8, 5, 1),
+(8, 6, 1),
+(9, 9, 2),
+(10, 2, 2),
+(10, 4, 1),
+(10, 5, 1),
+(10, 6, 1),
+(11, 2, 1),
+(11, 4, 2),
+(12, 9, 1),
+(12, 10, 1),
+(13, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `receivers`
+--
+
+CREATE TABLE `receivers` (
+  `customer_id` int NOT NULL,
+  `id` int NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `address` varchar(200) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `receivers`
+--
+
+INSERT INTO `receivers` (`customer_id`, `id`, `name`, `phone`, `address`, `status`) VALUES
+(1, 1, 'Mi Mi', '0951847632', 'Le Loi', 0),
+(1, 2, 'Hang Nga', '0369852147', 'Nguyen Trai', 1),
+(3, 1, '1', '1', '1', 0),
+(3, 2, '2', '2', '2', 0),
+(4, 1, 'Bui Huu Loc', '0987614523', 'Le Loi', 0),
+(4, 2, 'Nguyen Nguyen', '0369258147', 'Nguyen Trai', 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `email_2` (`email`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `manufacturers`
@@ -174,12 +256,23 @@ ALTER TABLE `receipts`
 --
 ALTER TABLE `receipt_detail`
   ADD PRIMARY KEY (`receipt_id`,`product_id`),
-  ADD KEY `receipt_id` (`receipt_id`,`product_id`),
   ADD KEY `receipt_detail_ibfk_1` (`product_id`);
+
+--
+-- Indexes for table `receivers`
+--
+ALTER TABLE `receivers`
+  ADD PRIMARY KEY (`customer_id`,`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -203,7 +296,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `receipts`
 --
 ALTER TABLE `receipts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
@@ -219,14 +312,20 @@ ALTER TABLE `products`
 -- Constraints for table `receipts`
 --
 ALTER TABLE `receipts`
-  ADD CONSTRAINT `receipts_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `receipts_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`);
 
 --
 -- Constraints for table `receipt_detail`
 --
 ALTER TABLE `receipt_detail`
-  ADD CONSTRAINT `receipt_detail_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `receipt_detail_ibfk_2` FOREIGN KEY (`receipt_id`) REFERENCES `receipts` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `receipt_detail_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  ADD CONSTRAINT `receipt_detail_ibfk_2` FOREIGN KEY (`receipt_id`) REFERENCES `receipts` (`id`);
+
+--
+-- Constraints for table `receivers`
+--
+ALTER TABLE `receivers`
+  ADD CONSTRAINT `receivers_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
