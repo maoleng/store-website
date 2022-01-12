@@ -19,7 +19,9 @@
 			<br>
 
 			<?php if (isset($_SESSION['id'])) { ?>
-				<a href="process_add_to_cart.php?id=<?php echo $array_products['id'] ?>">Thêm vào giỏ hàng</a>
+				<button data-id='<?php echo $array_products['id'] ?>' class = "button-add-to-cart">
+					Thêm vào giỏ hàng
+				</button>
 			<?php }	 ?>
 
 		</div>

@@ -18,5 +18,30 @@
 	<?php require 'footer_customers.php' ?>
 </div>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".button-add-to-cart").click(function() {
+		var id = $(this).data("id");
+		
+		$.ajax({
+			url: 'process_add_to_cart.php',
+			type: 'get',
+			// dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+			data: {id},
+		})
+		.done(function(data) {
+			if ( data == 1 ) {
+				console.log("thanh cong roi dmmm")
+			} else {
+				console.log(data)
+			}
+			
+		})
+	})
+})
+</script>
+
 </body>
 </html>
