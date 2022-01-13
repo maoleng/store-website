@@ -16,4 +16,3 @@ if ($type == "decrease") {
 }
 
  
-header('location:view_cart.php');

@@ -32,7 +32,7 @@ $(document).ready(function() {
 			data: {id},
 		})
 		.done(function(data) {
-			if ( data == 1 ) {
+			if ( data == 1 ) { 
 				console.log("thanh cong roi dmmm")
 			} else {
 				console.log(data)

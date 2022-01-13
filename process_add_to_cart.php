@@ -5,7 +5,7 @@ try {
 	session_start();
 	// unset($_SESSION['cart']);
 
-	if ( empty($_GET['ida']) ) {
+	if ( empty($_GET['id']) ) {
 		throw new Exception("Không tồn tại id");
 		
 	}

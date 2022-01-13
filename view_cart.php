@@ -7,14 +7,14 @@ session_start();
 <head>
 	<title></title>
 </head>
-<body bgcolor = "#FFFFFFF">
+<body bgcolor = "#36393F">
 	<?php $cart = $_SESSION['cart'];
 	if (empty($cart)) {
 		$_SESSION['error'] = "Chưa có gì trong giỏ hàng";
 		echo $_SESSION['error'];
 	}
 
-	$money_of_all = 0;
+	$total = 0;
 
 	?>
 
@@ -30,37 +30,51 @@ session_start();
 
 		<tr>
 			<?php foreach ($cart as $id => $array_products) : ?>
-				
+					<?php
+						$sum = $array_products['price'] * $array_products['quantity'];
+						$total += $sum;
+					?>
 				<tr>
 					<td>
 						<img height = "100px" src="admin/products/<?php echo $array_products['image'] ?>">
 					</td>
 					<td><?php echo $array_products['name'] ?></td>
-					<td><?php echo $array_products['price'] ?></td>
+					<td>
+						<span class = "span-price">
+							<?php echo $array_products['price'] ?>	
+						</span>
+					</td>
 					<td>
 						<a href="process_update_quantity_in_cart.php?id=<?php echo $id ?>&type=decrease">-</a>
-						<?php echo $array_products['quantity']; ?>
-						<a href="process_update_quantity_in_cart.php?id=<?php echo $id ?>&type=increase">+</a>
+						<span class = "span-quantity">
+							<?php echo $array_products['quantity']; ?>	
+						</span>
+						<button class = "button-update-quantity" data-id='<?php echo $id ?>' data-type='increase'> 
+							+
+						</button>
 					</td>
-					<td><?php echo $array_products['quantity'] * $array_products['price'] ?></td>
+					<td>
+						<span class = "span-sum">
+							<?php echo $sum ?>
+						</span>
+					</td>
 					<td>
 						<a href="process_delete_cart.php?id=<?php echo $id ?>">Xóa</a>
 					</td>
 				</tr>
 
-					<?php  
-						$money_of_thing = $array_products['price'] * $array_products['quantity'];
-						$money_of_all += $money_of_thing;
-					?>
-
-
-				
+					
 			<?php endforeach ?>
 		</tr>
 
  	</table>
 
-	<h1> 	Tổng tiền là <?php echo $money_of_all ?> </h1>
+	<h1>
+		Tổng tiền là 
+		<span class = "span-total">
+			<?php echo $total ?> 
+		</span>
+	</h1>
 
 
 	<?php 
@@ -85,6 +99,41 @@ session_start();
 		<input type="text" name="receiver_address" value = "<?php echo $array_customer['address'] ?>" ><br>
 		<button>Đặt hàng</button>
 	</form>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".button-update-quantity").click(function(event) {
+			var button = $(this)
+			var id = button.data('id')
+			var type = button.data('type')
+
+			$.ajax({
+				url: 'process_update_quantity_in_cart.php',
+				type: 'get',
+				data: {id,type},
+			})
+			.done(function() {
+				var parent_tr = button.parents('tr')
+				var quantity = parent_tr.find('.span-quantity').text()
+				var price = parent_tr.find('.span-price').text()
+				quantity++
+				parent_tr.find('.span-quantity').text(quantity)
+				var sum = price * quantity
+				parent_tr.find('.span-sum').text(sum)
+
+				var total = 0
+				$('.span-sum').each(function() {
+					total += Number($(this).text())
+				})
+				$('.span-total').text(total)
+
+			})
+		});
+	});		
+	</script>
 
 </body>
 </html>
