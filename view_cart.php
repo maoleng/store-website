@@ -7,7 +7,7 @@ session_start();
 <head>
 	<title></title>
 </head>
-<body bgcolor = "#36393F">
+<body bgcolor = "#7F7F7F">
 	<?php $cart = $_SESSION['cart'];
 	if (empty($cart)) {
 		$_SESSION['error'] = "Chưa có gì trong giỏ hàng";
@@ -45,7 +45,9 @@ session_start();
 						</span>
 					</td>
 					<td>
-						<a href="process_update_quantity_in_cart.php?id=<?php echo $id ?>&type=decrease">-</a>
+						<button class = "button-update-quantity" data-id='<?php echo $id ?>' data-type='decrease'> 
+							-
+						</button>
 						<span class = "span-quantity">
 							<?php echo $array_products['quantity']; ?>	
 						</span>
@@ -59,7 +61,9 @@ session_start();
 						</span>
 					</td>
 					<td>
-						<a href="process_delete_cart.php?id=<?php echo $id ?>">Xóa</a>
+						<button class = "button-delete" data-id='<?php echo $id ?>'>
+							Xóa
+						</button>
 					</td>
 				</tr>
 
@@ -119,20 +123,47 @@ session_start();
 				var parent_tr = button.parents('tr')
 				var quantity = parent_tr.find('.span-quantity').text()
 				var price = parent_tr.find('.span-price').text()
-				quantity++
-				parent_tr.find('.span-quantity').text(quantity)
-				var sum = price * quantity
-				parent_tr.find('.span-sum').text(sum)
-
-				var total = 0
-				$('.span-sum').each(function() {
-					total += Number($(this).text())
-				})
-				$('.span-total').text(total)
-
+				if ( type == 'increase' ) {
+					quantity++;
+				} else {
+					quantity--;
+				}
+				if ( quantity == 0 ) {
+					parent_tr.remove();
+				} else {
+					parent_tr.find('.span-quantity').text(quantity)
+					var sum = price * quantity
+					parent_tr.find('.span-sum').text(sum)
+				}
+				get_total()
 			})
-		});
-	});		
+		})
+
+		$(".button-delete").click(function() {
+			var button = $(this)
+			var id = button.data('id')
+			var total = Number($('.span-total').text())
+			var sum = Number($('.span-sum').text())
+			var	parent_tr = button.parents('tr')
+			$.ajax({
+				url: 'process_delete_cart.php',
+				type: 'get',
+				data: {id},
+			})
+			.done(function() {
+				parent_tr.remove()
+				get_total()
+			})
+		})
+	})	
+
+	function get_total() {
+		var total = 0
+		$('.span-sum').each(function() {
+			total += Number($(this).text())
+		})
+		$('.span-total').text(total)
+	}
 	</script>
 
 </body>
