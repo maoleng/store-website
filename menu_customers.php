@@ -7,8 +7,11 @@
 
 		<?php if (empty($_SESSION['id'])) { ?>
 			<li>
-				<a href="form_sign_up.php">Đăng ký</a>
+				<button type="button" data-toggle="modal" data-target="#modal-sign-up">
+					Đăng ký
+				</button>
 			</li>
+			<?php include 'form_sign_up.php'; ?>
 			<li>
 				<a href="form_sign_in.php">Đăng nhập</a>
 			</li>

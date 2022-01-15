@@ -14,7 +14,7 @@ $query_sql_command_check_email = mysqli_query($connect_database, $sql_command_ch
 $count_email = mysqli_fetch_array($query_sql_command_check_email)['count(*)'];
 
 if ($count_email == 1) {
-	header('location:form_sign_up.php?error=Email đã trùng');
+	echo "email đã trùng rồi";
 	exit;
 }
 
@@ -24,10 +24,10 @@ mysqli_query($connect_database, $sql_command_insert);
 
 
 //gửi email báo đăng kí thành công
-require 'mail.php';
-$title = "Đăng kí thành công";
-$content = "Chúc mừng bạn đã đăng kí thành công, phần thưởng iphone promax của bạn tại link: <a href = 'nhacai88uytinhangdau.net'>Link uy tín</a>";
-send_mail($email, $name, $title, $content);
+// require 'mail.php';
+// $title = "Đăng kí thành công";
+// $content = "Chúc mừng bạn đã đăng kí thành công, phần thưởng iphone promax của bạn tại link: <a href = 'nhacai88uytinhangdau.net'>Link uy tín</a>";
+// send_mail($email, $name, $title, $content);
 
 
 
@@ -40,3 +40,4 @@ $_SESSION['name'] = $name;
 $_SESSION['id'] = $id;
 
 
+echo 1;
