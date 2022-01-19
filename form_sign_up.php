@@ -24,6 +24,7 @@
 				Mật khẩu
 				<input type="password" name="password"><br>
 				<button>Đăng ký</button>
+
 			</form>
 		</div>
 	</div>
@@ -32,23 +33,53 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#form-sign-up").submit(function(event) {
-		event.preventDefault()
-		$.ajax({
-			url: 'process_sign_up.php',
-			type: 'post',
-			dataType: 'html',
-			data: $(this).serializeArray(),
-		})
-		.done(function(response) {
-			if ( response != '1' ) {
-				$("#div-error").text(response)
-				$("#div-error").show()
-			}else {
-				$("#form-sign-up").toggle()
-				$(".modal-backdrop").hide()
+	$("#form-sign-up").validate({
+		rules: {
+			"name": {
+				required: true,
+				maxlength: 15
+			},
+			"email": {
+				required: true,
+				email: true
+			},
+			"password": {
+				required: true,
+				minlength: 8,
 			}
-		})
-	})
+		},
+		messages: {
+			"name": {
+				required: "Bắt buộc nhập tên",
+				maxlength: "Hãy nhập tối đa 15 ký tự"
+			},
+			"email": {
+				required: "Bắt buộc nhập email",
+				email: "Email sai định dạng"
+			},
+			"password": {
+				minlength: "Hãy nhập ít nhất 8 ký tự",
+				required: "Bắt buộc nhập mật khẩu"
+			}
+		},
+		submitHandler: function() {
+			$.ajax({
+				url: 'process_sign_up.php',
+				type: 'post',
+				dataType: 'html',
+				data: $("#form-sign-up").serializeArray(),
+			})
+			.done(function(response) {
+				if ( response != '1' ) {
+					$("#div-error").text(response)
+					$("#div-error").show()
+				}else {
+					$("#form-sign-up").toggle()
+					$(".modal-backdrop").hide()
+					$("#modal-sign-up").hide()
+				}
+			})
+		}
+	});
 })
 </script>
