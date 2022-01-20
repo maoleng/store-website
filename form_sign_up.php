@@ -33,33 +33,39 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	$.validator.addMethod("regx", function(value, element, regexpr) {          
+    	return regexpr.test(value);
+	}, "Please enter a valid pasword.");
 	$("#form-sign-up").validate({
 		rules: {
 			"name": {
 				required: true,
-				maxlength: 15
+				maxlength: 15,
+				regx: /^[a-z]+$/,
+			},
+			"password": {
+				required: true,
+				minlength: 8
 			},
 			"email": {
 				required: true,
 				email: true
-			},
-			"password": {
-				required: true,
-				minlength: 8,
 			}
 		},
 		messages: {
 			"name": {
-				required: "Bắt buộc nhập tên",
-				maxlength: "Hãy nhập tối đa 15 ký tự"
+				required: "Bắt buộc nhập username",
+				maxlength: "Hãy nhập tối đa 15 ký tự",
+	            regx: "Sai dinh dang ten",
+
+			},
+			"password": {
+				required: "Bắt buộc nhập password",
+				minlength: "Hãy nhập ít nhất 8 ký tự"
 			},
 			"email": {
 				required: "Bắt buộc nhập email",
-				email: "Email sai định dạng"
-			},
-			"password": {
-				minlength: "Hãy nhập ít nhất 8 ký tự",
-				required: "Bắt buộc nhập mật khẩu"
+				email: "Sai dinh dang email"
 			}
 		},
 		submitHandler: function() {

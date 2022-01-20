@@ -11,7 +11,7 @@ try {
 	}
 
 	$id = $_GET['id'];
-	if ( empty($_SESSION['cart'][$id]) ) {
+	if ( empty($_SESSION['cart'][$id]) ) { 
 		require 'admin/connect_database.php';
 		$sql_command_select = "select * from products where id = '$id' ";
 		$query_sql_command_select = mysqli_query($connect_database, $sql_command_select);
@@ -26,6 +26,6 @@ try {
 		$_SESSION['cart'][$id]['quantity']++;		
 	}
 	echo 1;	
-} catch (Throwable $e) {
+} catch (Exception $e) {
 	echo $e->getMessage();
 }
