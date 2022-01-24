@@ -52,48 +52,7 @@
 <body bgcolor="ABB1BA">
 <?php
 	// require '../menu.php';
-	require '../connect_database.php';
-	$sql_command_select = "
-		SELECT sum(total_price) as 'cash_each_day', DATE_FORMAT(order_time, '%e-%m') as 'day'
-		FROM receipts
-		WHERE DATE(order_time) >= (CURDATE() - INTERVAL 31 DAY)
-		GROUP BY DATE_FORMAT(order_time, '%d-%m')
-	";
 	
-	$query_sql_command_select = mysqli_query($connect_database, $sql_command_select);
-	$array = [];
-	
-	$max_day_of_this_month_to_get = 31;
-	$day_today = date('d');
-	$this_month = date('m');
-
-	if ( $max_day_of_this_month_to_get > $day_today ) {
-		$get_days_last_month = $max_day_of_this_month_to_get - $day_today;
-		$previous_month = date("m",strtotime("-1 month"));
-		$max_day_of_previous_month = date("t", strtotime($previous_month));
-		$start_day_of_last_month = $max_day_of_previous_month - $get_days_last_month;	
-
-		for ( $i = $start_day_of_last_month; $i <= $max_day_of_previous_month; $i++ ) {
-			$index = $i . '-' . $previous_month;
-			$array[$index] = 0;
-		}
-		$start_day_of_this_month = 1;
-	} else {
-		$start_day_of_this_month = $day_today - $max_day_of_this_month_to_get;
-	}
-
-	
-
-	for ( $i = $start_day_of_this_month; $i <= $day_today; $i++ ) {
-		$index = $i . '-' . $this_month;
-		$array[$index] = 0;
-	}
-	foreach ($query_sql_command_select as $array_cash_each_day ) {
-		$array[$array_cash_each_day['day']] = (float)$array_cash_each_day['cash_each_day'];
-	}
-
-	$arrayX = array_keys($array);
-	$arrayY = array_values($array);
 
 
 ?>
@@ -108,64 +67,80 @@
   </p>
 </figure>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-<script type="text/javascript">Highcharts.chart('container', {
+<script type="text/javascript">
+$(document).ready(function() {
+	$.ajax({
+		url: 'get_cash_earned.php',
+		type: 'get',
+		dataType: 'json',
+		data: {days: 31},
+	})
+	.done(function(response) {
+		var arrayX = Object.keys(response)
+		var arrayY = Object.values(response)
 
-	  title: {
-	    text: 'Thống kê doanh thu 30 ngày gần nhất'
-	  },
 
-	  yAxis: {
-	    title: {
-	      text: 'Doanh thu'
-	    }
-	  },
+		Highcharts.chart('container', {
 
-	  xAxis: {
-        categories: <?php echo json_encode($arrayX); ?>
-	  },
+		  title: {
+		    text: 'Thống kê doanh thu 30 ngày gần nhất'
+		  },
 
-	  legend: {
-	    layout: 'vertical',
-	    align: 'right',
-	    verticalAlign: 'middle'
-	  },
+		  yAxis: {
+		    title: {
+		      text: 'Doanh thu'
+		    }
+		  },
 
-	  plotOptions: {
-	    series: {
-	      label: {
-	        connectorAllowed: false
-	      },
-	    }
-	  },
+		  xAxis: {
+	        categories: arrayY
+		  },
 
-	  series: [{
-	    name: 'Doanh thu',
-	    data: <?php echo json_encode($arrayY); ?>
-	  }],
+		  legend: {
+		    layout: 'vertical',
+		    align: 'right',
+		    verticalAlign: 'middle'
+		  },
 
-	  responsive: {
-	    rules: [{
-	      condition: {
-	        maxWidth: 500
-	      },
-	      chartOptions: {
-	        legend: {
-	          layout: 'horizontal',
-	          align: 'center',
-	          verticalAlign: 'bottom'
-	        }
-	      }
-	    }]
-	  }
+		  plotOptions: {
+		    series: {
+		      label: {
+		        connectorAllowed: false
+		      },
+		    }
+		  },
 
-	});
+		  series: [{
+		    name: 'Doanh thu',
+		    data: arrayY
+		  }],
+
+		  responsive: {
+		    rules: [{
+		      condition: {
+		        maxWidth: 500
+		      },
+		      chartOptions: {
+		        legend: {
+		          layout: 'horizontal',
+		          align: 'center',
+		          verticalAlign: 'bottom'
+		        }
+		      }
+		    }]
+		  }
+
+		});
+		})
+	
+})
 </script>
 
 </body>
