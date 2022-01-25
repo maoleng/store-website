@@ -51,7 +51,7 @@
 
 <body bgcolor="ABB1BA">
 <?php
-	// require '../menu.php';
+	require '../menu.php';
 	
 
 

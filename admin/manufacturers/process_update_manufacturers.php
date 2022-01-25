@@ -1,7 +1,7 @@
 <?php require '../check_super_admin_login.php' ?>
 <?php
 
-if (empty($_POST['id'];)){
+if (empty($_POST['id'])){
 	$_SESSION['error'] = 'Chưa nhập id bài cần sửa';
 	header('location:index_manufacturers.php');
 	exit;
