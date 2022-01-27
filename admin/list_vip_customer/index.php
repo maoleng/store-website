@@ -56,7 +56,7 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 
 		<div class = "bot">
 			<div class = "header">
-				<h1 class = "header">THỐNG KÊ SẢN PHẨM</h1>		
+				<h1 class = "header">THỐNG KÊ KHÁCH HÀNG THÂN THIẾT</h1>		
 			</div>
 			<?php require '../validate.php' ?>
 
@@ -73,8 +73,8 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 			<table class = "table">
 				<tr>
 					<th>ID</th>
-					<th>Tên sản phẩm</th>
-					<th>Số sản phẩm bán được</th>
+					<th>Tên khách hàng</th>
+					<th>Số tiền khách hàng bỏ ra</th>
 				</tr>
 
 				<?php foreach ($query_sql_command_select as $array_products) :?>
