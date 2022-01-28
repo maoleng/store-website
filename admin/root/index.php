@@ -68,7 +68,6 @@ $(document).ready(function() {
 		data: {days},
 	})
 	.done(function(response) {
-		console.log(response)
 		const array = Object.values(response[0])
 		const array_detail = []
 		Object.values(response[1]).forEach((each) => {
@@ -141,8 +140,6 @@ $(document).ready(function() {
 	.done(function(response) {
 		var arrayX = Object.keys(response)
 		var arrayY = Object.values(response)
-
-
 		Highcharts.chart('container', {
 
 		  title: {

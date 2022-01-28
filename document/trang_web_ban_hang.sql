@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 27, 2022 at 07:14 PM
+-- Generation Time: Jan 28, 2022 at 01:04 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.19
 
@@ -176,7 +176,9 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `manufact
 (25, 'bbhjbjhbchjasbcjh', 'sdbhcjbajsdbhcjbaj', 50, 'images/1643210049.png', 3),
 (26, 'bbhjbjhbchjasbcjh', 'sdbhcjbajsdbhcjbaj', 50, 'images/1643210061.png', 3),
 (27, 'bbhjbjhbchjasbcjh', 'sdbhcjbajsdbhcjbaj', 50, 'images/1643210140.png', 3),
-(28, 'bbhjbjhbchjasbcjh', 'sdbhcjbajsdbhcjbaj', 50, 'images/1643210154.png', 3);
+(28, 'bbhjbjhbchjasbcjh', 'sdbhcjbajsdbhcjbaj', 50, 'images/1643210154.png', 3),
+(29, 'csacsacsacsacsacasc', 'cascsacsacsacsacsacsac', 34, 'images/1643374463.png', 4),
+(30, 'cacsacsacascsacasOKE', 'vsdvsvsdvdsvdsvdsvdvs', 34, 'images/1643374734.png', 3);
 
 -- --------------------------------------------------------
 
@@ -195,7 +197,14 @@ CREATE TABLE `product_type` (
 
 INSERT INTO `product_type` (`product_id`, `type_id`) VALUES
 (28, 1),
-(28, 2);
+(28, 2),
+(30, 5),
+(30, 6),
+(30, 7),
+(30, 8),
+(30, 9),
+(30, 10),
+(30, 30);
 
 -- --------------------------------------------------------
 
@@ -263,21 +272,27 @@ INSERT INTO `receipt_detail` (`receipt_id`, `product_id`, `quantity`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `type`
+-- Table structure for table `types`
 --
 
-CREATE TABLE `type` (
+CREATE TABLE `types` (
   `id` int NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `type`
+-- Dumping data for table `types`
 --
 
-INSERT INTO `type` (`id`, `name`) VALUES
+INSERT INTO `types` (`id`, `name`) VALUES
+(10, 'as'),
+(5, 'bca'),
+(9, 'c'),
+(8, 'csa'),
+(2, 'nấu ăn'),
 (1, 'nhà cửa'),
-(2, 'nấu ăn');
+(7, 'sa'),
+(6, 'sc');
 
 --
 -- Indexes for dumped tables
@@ -339,10 +354,11 @@ ALTER TABLE `receipt_detail`
   ADD KEY `receipt_detail_ibfk_1` (`product_id`);
 
 --
--- Indexes for table `type`
+-- Indexes for table `types`
 --
-ALTER TABLE `type`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `types`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -370,7 +386,7 @@ ALTER TABLE `manufacturers`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `receipts`
@@ -379,10 +395,10 @@ ALTER TABLE `receipts`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `type`
+-- AUTO_INCREMENT for table `types`
 --
-ALTER TABLE `type`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `types`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
