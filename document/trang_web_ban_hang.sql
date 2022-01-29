@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 28, 2022 at 01:04 PM
+-- Generation Time: Jan 29, 2022 at 05:14 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.19
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `trang_web_ban_hang`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activities`
+--
+
+CREATE TABLE `activities` (
+  `id` int NOT NULL,
+  `activity` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `activities`
+--
+
+INSERT INTO `activities` (`id`, `activity`, `time`) VALUES
+(3, 'superadmin đã thêm sản phẩm Nhà sản xuất mới', '2022-01-29 15:57:05'),
+(4, 'superadmin đã thêm nhà sản xuất Vinamilk', '2022-01-29 16:04:23');
 
 -- --------------------------------------------------------
 
@@ -67,7 +87,7 @@ CREATE TABLE `customers` (
 
 INSERT INTO `customers` (`id`, `name`, `gender`, `dob`, `email`, `phone`, `address`, `password`, `token`) VALUES
 (1, 'Hydra', 'male', '2021-12-15', 'longthanh@gmail.com', '', '', 'Long1234', ''),
-(2, 'hydra', 'male', '2000-09-02', 'longthanh1@gmail.com', '', '', 'Long1234', 'user_61c02f2f3092f9.427462291639984943'),
+(2, 'hydraaa', 'male', '2000-09-02', 'longthanh1@gmail.com', '', '', 'Long1234', 'user_61c02f2f3092f9.427462291639984943'),
 (16, 'Bui huu Loc', 'Nam', '2022-01-01', 'feature451@gmail.com', '0123465798', 'Le lOi tuy Hoa', '123456', NULL),
 (17, 'casca', 'Nam', '2021-12-28', 'cascas@csacsa', '4324234', 'cascsa', 'ca', NULL),
 (18, 'casca', 'Nam', '2022-01-05', 'casca@cas', '32432', 'cascsa', 'cas', NULL),
@@ -127,8 +147,8 @@ INSERT INTO `manufacturers` (`id`, `name`, `address`, `phone`, `image`) VALUES
 (7, 'Bodoca', 'Việt Nam', '0369258147', 'https://thietbimiennam.com/wp-content/uploads/2016/10/logo-bodoca.png'),
 (8, 'Điện máy xanh', 'Việt Nam', '095184762', 'https://prices.vn/photos/7/store/ma-giam-gia-dienmayxanh.png'),
 (9, 'SunHouse', 'Việt Nam', '0159236478', 'https://upload.wikimedia.org/wikipedia/vi/e/ed/Logo_cong_ty_sunhouse.png'),
-(10, 'casccsascacsasc', 'cascascscacsacsa', 'cascsaasccsaa', 'cascacascsacsacsacascsacas'),
-(11, 'cascbasjhcbas', 'cascsacascsacas', '0963852740', 'https://upload.wikimedia.org/wikipedia/commons/4/43/Latin_letter_A_with_acute.svg');
+(22, 'Nhà sản xuất mới', 'Phú Yênnnn', '0984123465', 'http://tapchimoitruong.vn/Lists/Articles/Attachments/49083/image001.jpg'),
+(23, 'Vinamilk', 'Việt Nammmmm', '0984564987', 'https://blog.topcv.vn/wp-content/uploads/2018/01/lam-viec-tai-vinamilk-1.png');
 
 -- --------------------------------------------------------
 
@@ -230,10 +250,10 @@ CREATE TABLE `receipts` (
 INSERT INTO `receipts` (`id`, `customer_id`, `receiver_name`, `receiver_phone`, `receiver_address`, `status`, `order_time`, `total_price`) VALUES
 (8, 2, 'hydra ', '0123456789', 'Le Loi', 6, '2022-01-24 11:53:52', 43954000),
 (9, 2, 'Huu Loc', '0159478236', 'Nguyen Hue', 6, '2022-02-02 08:18:35', 5568000),
-(10, 2, 'Kim Hue', '0369852147', 'Gia Lai', 6, '2021-12-28 08:19:03', 23280000),
-(11, 1, 'Huu Loc', '012346798', 'Le Loi', 0, '2021-12-29 09:53:36', 499000),
-(12, 1, 'Nguyen Ti', '015947826', 'Nguyen Thai Hoc', 0, '2021-12-29 09:53:58', 11899000),
-(13, 1, 'Ho Ngoc Han', '0065165165', 'Nguyen Thai Hoc', 1, '2021-12-29 09:56:34', 649000);
+(10, 2, 'Kim Hue', '0369852147', 'Gia Lai', 6, '2022-12-22 08:19:03', 23280000),
+(11, 1, 'Huu Loc', '012346798', 'Le Loi', 6, '2022-12-21 09:53:36', 499000),
+(12, 1, 'Nguyen Ti', '015947826', 'Nguyen Thai Hoc', 0, '2022-12-26 09:53:58', 11899000),
+(13, 16, 'Ho Ngoc Han', '0065165165', 'Nguyen Thai Hoc', 1, '2022-12-05 09:56:34', 649000);
 
 -- --------------------------------------------------------
 
@@ -297,6 +317,12 @@ INSERT INTO `types` (`id`, `name`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `activities`
+--
+ALTER TABLE `activities`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `admins`
@@ -380,7 +406,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `manufacturers`
 --
 ALTER TABLE `manufacturers`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `products`
