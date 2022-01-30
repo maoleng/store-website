@@ -15,5 +15,3 @@ if ($status == 4) {
 	$sql_command_update = "update receipts set status = 3 where id = $id";
 	mysqli_query($connect_database, $sql_command_update);
 }
-
-
