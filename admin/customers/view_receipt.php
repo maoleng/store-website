@@ -102,7 +102,7 @@ $query_select = mysqli_query($connect_database, $sql_select);
 					<a href="../receipts/update_receipt.php?id=<?php echo $each_receipt['id'] ?>&status=5&customer_id=<?php echo $id ?>">Giao thành công</a>
 				<?php } ?>
 				<br>
-				<a href="../receipts/update_receipt.php?id=<?php echo $each_receipt['id'] ?>&status=3customer_id=<?php echo $id ?>">Hủy đơn hàng</a>
+				<a href="../receipts/update_receipt.php?id=<?php echo $each_receipt['id'] ?>&status=3&customer_id=<?php echo $id ?>">Hủy đơn hàng</a>
 			</td>
 			
 		</tr>
