@@ -1,6 +1,5 @@
-<?php require '../check_super_admin_login.php'; 
+<?php require '../check_super_admin_login.php'; ?>
 
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +7,7 @@
 	<link rel="stylesheet" href="../index3.css">
 	<link rel="stylesheet" href="../style_validate1.css">
 	<link rel="stylesheet" type="text/css" href="../style_table.css">
-	<link rel="stylesheet" type="text/css" href="style_detail_customer.css">
+	<link rel="stylesheet" type="text/css" href="style_detail_customer_1.css">
 </head>
 
 <?php require '../connect_database.php';
@@ -50,68 +49,50 @@ $each_customer = mysqli_fetch_array($query_sql_select_customers);
 	</div>
 	<br>
 	<?php require '../validate.php' ?>
-	<br><br>
 
-<div id="container">	
-	
-<!-- Start	Product details -->
-	<div class="product-details">
+	<div id="container">	
+		<div class="product-details">
+		<h1><?php echo $each_customer['name'] ?></h1>
+		<span class="hint-star star">
+			<i class="fa fa-star" aria-hidden="true">Khách hàng thứ <?php echo $each_customer['id'] ?> của cửa hàng</i>
+		</span>
 		
-		<!-- 	Product Name -->
-	<h1><?php echo $each_customer['name'] ?></h1>
-	<span class="hint-star star">
-		<i class="fa fa-star" aria-hidden="true"></i>
-		<i class="fa fa-star" aria-hidden="true"></i>
-		<i class="fa fa-star" aria-hidden="true"></i>
-		<i class="fa fa-star-half-o" aria-hidden="true"></i>
-		<i class="fa fa-star-o" aria-hidden="true"></i>
-	</span>
-		
-	
-<!-- The most important information about the product -->
-<!-- 		<p class="information">" Especially good for container gardening, the Angelonia will keep blooming all summer even if old flowers are removed. Once tall enough to cut, bring them inside and you'll notice a light scent that some say is reminiscent of apples. "</p> -->
-
-		
-		
-	<div class="control">
-		<button class="btn">
-			<span class="buy">Xem chi tiết hóa đơn khách đã đặt</span>
-		</button>
-	</div>
+	<!-- The most important information about the product -->
+	<!-- 		<p class="information">" Especially good for container gardening, the Angelonia will keep blooming all summer even if old flowers are removed. Once tall enough to cut, bring them inside and you'll notice a light scent that some say is reminiscent of apples. "</p> -->
 			
+		<div class="control">
+			<form action = "view_receipt.php" method = "get">
+			<button class="btn">
+				<input type="hidden" name="id" value = "<?php echo $each_customer['id'] ?>">
+				<span class="buy">Xem chi tiết hóa đơn khách đã đặt</span>
+			</button>
+			</form>
+		</div>
+				
+		</div>
+			
+		<div class="product-image">
+			<img src="https://sc01.alicdn.com/kf/HTB1Cic9HFXXXXbZXpXXq6xXFXXX3/200006212/HTB1Cic9HFXXXXbZXpXXq6xXFXXX3.jpg" alt="Omar Dsoky">
+			<div class="info">
+				<h2>Chi tiết</h2>
+				<ul>
+					<li>
+						<strong>Giới tính: </strong>
+						<?php if ($each_customer['gender'] == 'male') {
+							echo 'Nam';
+						} else {
+							echo 'Nữ';
+						} ?>
+					</li>
+					<li><strong>Ngày sinh: </strong><?php echo $each_customer['dob'] ?></li>
+					<li><strong>Email: </strong><?php echo $each_customer['email'] ?></li>
+					<li><strong>Số tiền bỏ ra: </strong><?php echo $each_customer['money'] ?> đồng</li>
+					<li><strong>Lần cuối mua hàng: </strong><?php echo $each_customer['last_time'] ?></li>
+				</ul>
+			</div>
+		</div>
 	</div>
-		
-	<div class="product-image">
-		
-		<img src="https://sc01.alicdn.com/kf/HTB1Cic9HFXXXXbZXpXXq6xXFXXX3/200006212/HTB1Cic9HFXXXXbZXpXXq6xXFXXX3.jpg" alt="Omar Dsoky">
-		
-	<!-- 	product Information-->
-	<div class="info">
-		<h2>Chi tiết</h2>
-		<ul>
-			<li>
-				<strong>Giới tính: </strong>
-				<?php if ($each_customer['gender'] == 'male') {
-					echo 'Nam';
-				} else {
-					echo 'Nữ';
-				} ?>
-			</li>
-			<li><strong>Ngày sinh: </strong><?php echo $each_customer['dob'] ?></li>
-			<li><strong>Email: </strong><?php echo $each_customer['email'] ?></li>
-			<li><strong>Số tiền bỏ ra: </strong><?php echo $each_customer['money'] ?>đồng</li>
-			<li><strong>Lần cuối mua hàng: </strong><?php echo $each_customer['last_time'] ?></li>
-		</ul>
-	</div>
 </div>
-
-</div>
-
-
-
-
-</div>
-
 
 </body>
 </html>
