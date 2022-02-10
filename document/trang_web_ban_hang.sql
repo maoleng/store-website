@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 29, 2022 at 05:14 PM
+-- Generation Time: Feb 10, 2022 at 11:37 AM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.19
 
@@ -39,7 +39,99 @@ CREATE TABLE `activities` (
 
 INSERT INTO `activities` (`id`, `activity`, `time`) VALUES
 (3, 'superadmin đã thêm sản phẩm Nhà sản xuất mới', '2022-01-29 15:57:05'),
-(4, 'superadmin đã thêm nhà sản xuất Vinamilk', '2022-01-29 16:04:23');
+(4, 'superadmin đã thêm nhà sản xuất Vinamilk', '2022-01-29 16:04:23'),
+(6, 'superadmin đã cập nhật nhà sản xuất Fissler', '2022-01-30 09:36:59'),
+(7, 'superadmin đã xóa nhà sản xuất csaacssacsaccsacsasca', '2022-01-30 09:38:46'),
+(8, 'superadmin đã xóa sản phẩm cacsacsacascsacasOKE', '2022-01-30 09:40:35'),
+(9, 'superadmin đã thêm sản phẩm ', '2022-01-30 09:43:43'),
+(10, 'superadmin đã xóa sản phẩm cacsasaccsasacsaccsa', '2022-01-30 09:44:30'),
+(11, 'superadmin đã thêm sản phẩm okOKEsca', '2022-01-30 09:44:45'),
+(12, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMX CL005555 ', '2022-01-30 09:45:38'),
+(16, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMX CL0055 ', '2022-01-31 05:03:06'),
+(17, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đã giao', '2022-01-31 05:04:38'),
+(18, 'superadmin đã hủy đơn hàng số 9', '2022-01-31 05:04:43'),
+(19, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMX CL005 ', '2022-01-31 05:12:51'),
+(20, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMX CL0055 ', '2022-01-31 05:12:54'),
+(21, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMX CL00555 ', '2022-01-31 05:12:59'),
+(22, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đang giao', '2022-01-31 16:08:52'),
+(23, 'superadmin đã cập nhật trạng thái của đơn hàng số 9 thành trạng thái đang giao', '2022-01-31 16:08:59'),
+(24, 'superadmin đã cập nhật nhà sản xuất Fisslerrrr', '2022-02-07 14:03:26'),
+(25, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMXxx CL00555 ', '2022-02-07 14:59:12'),
+(26, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đã giao', '2022-02-07 15:07:50'),
+(27, 'superadmin đã hủy đơn hàng số 12', '2022-02-07 15:12:28'),
+(28, 'superadmin đã thêm sản phẩm san pham moi', '2022-02-08 05:49:39'),
+(29, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đã giao', '2022-02-08 19:51:00'),
+(30, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 19:55:28'),
+(31, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 19:56:29'),
+(32, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 19:57:02'),
+(33, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 19:57:18'),
+(34, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 19:57:49'),
+(35, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 19:58:04'),
+(36, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:00:26'),
+(37, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:03:09'),
+(38, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:04:27'),
+(39, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:05:11'),
+(40, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:09:17'),
+(41, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:09:40'),
+(42, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:10:03'),
+(43, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:10:29'),
+(44, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:10:45'),
+(45, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:10:58'),
+(46, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:11:07'),
+(47, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:11:15'),
+(48, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:11:37'),
+(49, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:11:41'),
+(50, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:12:45'),
+(51, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đang giao', '2022-02-08 20:13:36'),
+(52, 'superadmin đã hủy đơn hàng số 8', '2022-02-08 20:13:58'),
+(53, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 14:52:07'),
+(54, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 14:52:43'),
+(55, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đã giao', '2022-02-09 14:52:58'),
+(56, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 14:53:32'),
+(57, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đã giao', '2022-02-09 14:53:57'),
+(58, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 14:54:39'),
+(59, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đã giao', '2022-02-09 14:54:52'),
+(60, 'superadmin đã cập nhật trạng thái của đơn hàng số 10 thành trạng thái đã giao', '2022-02-09 14:55:42'),
+(61, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đang giao', '2022-02-09 14:57:24'),
+(62, 'superadmin đã cập nhật trạng thái của đơn hàng số 9 thành trạng thái đang giao', '2022-02-09 14:57:41'),
+(63, 'superadmin đã cập nhật trạng thái của đơn hàng số 10 thành trạng thái đang giao', '2022-02-09 14:57:59'),
+(64, 'superadmin đã cập nhật trạng thái của đơn hàng số 9 thành trạng thái đã giao', '2022-02-09 14:58:20'),
+(65, 'superadmin đã cập nhật trạng thái của đơn hàng số 10 thành trạng thái đang giao', '2022-02-09 14:58:32'),
+(66, 'superadmin đã cập nhật trạng thái của đơn hàng số 9 thành trạng thái đang giao', '2022-02-09 14:58:44'),
+(67, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đang giao', '2022-02-09 15:01:29'),
+(68, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đang giao', '2022-02-09 15:02:36'),
+(69, 'superadmin đã cập nhật trạng thái của đơn hàng số 10 thành trạng thái đang giao', '2022-02-09 15:06:00'),
+(70, 'superadmin đã cập nhật trạng thái của đơn hàng số 9 thành trạng thái đang giao', '2022-02-09 15:06:02'),
+(71, 'superadmin đã cập nhật trạng thái của đơn hàng số 10 thành trạng thái đã giao', '2022-02-09 15:06:03'),
+(72, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đã giao', '2022-02-09 15:07:24'),
+(73, 'superadmin đã hủy đơn hàng số 12', '2022-02-09 15:07:26'),
+(74, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 15:08:45'),
+(75, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đã giao', '2022-02-09 15:08:47'),
+(76, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 15:35:10'),
+(77, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đã giao', '2022-02-09 15:35:12'),
+(78, 'superadmin đã hủy đơn hàng số 13', '2022-02-09 15:39:35'),
+(79, 'superadmin đã hủy đơn hàng số 8', '2022-02-09 15:40:35'),
+(80, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuu', '2022-02-10 05:51:27'),
+(81, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 05:51:47'),
+(82, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuu', '2022-02-10 05:52:16'),
+(83, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 05:52:33'),
+(84, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuu', '2022-02-10 05:53:25'),
+(85, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuuu', '2022-02-10 05:54:52'),
+(86, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 05:55:38'),
+(87, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-10 05:56:59'),
+(88, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuuu', '2022-02-10 06:08:54'),
+(89, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:09:09'),
+(90, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuuu', '2022-02-10 06:09:36'),
+(91, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuuuu', '2022-02-10 06:10:13'),
+(92, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:10:42'),
+(93, 'superadmin đã xóa sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:11:14'),
+(94, 'superadmin đã xóa sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:13:56'),
+(95, 'superadmin đã xóa sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:14:08'),
+(96, 'superadmin đã xóa sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:14:28'),
+(97, 'superadmin đã xóa sản phẩm csacsacsacsacsacasc', '2022-02-10 09:28:32'),
+(98, 'superadmin đã xóa sản phẩm csacsacsacsacsacasc', '2022-02-10 09:28:34'),
+(99, 'superadmin đã xóa sản phẩm Cây lau nhà DMXxx CL00555 ', '2022-02-10 10:03:36'),
+(100, 'superadmin đã xóa sản phẩm Cây lau nhà DMXxx CL00555 ', '2022-02-10 10:03:37');
 
 -- --------------------------------------------------------
 
@@ -170,7 +262,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `manufacturer_id`) VALUES
-(2, 'Cây lau nhà DMX CL005555 ', 'Cây lau nhà có thân bằng inox cứng cáp, chiều dài 128 cm dễ sử dụng.\r\nTay cầm bọc nhựa chống trơn trượt, thân cây có khóa chắc chắn, có móc treo cất giữ.\r\nBông lau nhà bằng sợi cotton bền chắc, thấm hút tốt, giặt rửa dễ dàng.\r\nThương hiệu DMX - độc quyền Điện máy XANH, sản xuất tại Việt Nam.', 40000, 'images/1639849341.jpg', 8),
+(2, 'Cây lau nhà DMXxx CL00555 ', 'Cây lau nhà có thân bằng inoxx cứng cáp, chiều dài 128 cm dễ sử dụng.\r\nTay cầm bọc nhựa chống trơn trượt, thân cây có khóa chắc chắn, có móc treo cất giữ.\r\nBông lau nhà bằng sợi cotton bền chắc, thấm hút tốt, giặt rửa dễ dàng.\r\nThương hiệu DMX - độc quyền Điện máy XANH, sản xuất tại Việt Nam.', 40000, 'images/1639849341.jpg', 8),
 (3, 'Cây lau nhà xoay 360 ĐỘ SUNHOUSE KS-MO350I', 'Chất liệu cao cấp, an toàn cho sức khỏe\r\nCán bằng inox 201 có tay cầm bọc nhựa PP chắc chắn\r\nBộ phận tạo chuyển động bằng thép và nhựa POM siêu bền\r\nBông lau bằng sợi Microfiber thấm hút nước tốt', 459000, 'images/1639849505.jpg', 9),
 (4, 'Nồi từ FISSLER PRO COLLECTION HIGH STOCK POT 28CM 14L', 'Nhập khẩu nguyên chiếc CHLB Đức - Made in Germany\r\nNồi từ Fissler làm từ vật liệu thép không gỉ chất lượng cao 18/10 dày, đặc, truyền nhiệt hiệu quả\r\nĐáy nồi Cookstar Allstove, nấu được trên mọi loại bếp, kể cả bếp từ, hạn chế cháy cục bộ, không cong vênh, lồi lõm\r\nLõi nhôm dày hoa lỏng ở 600ºC trước khi dập các lớp với nhau bởi một lực 1500 tấn\r\nĐường kính nồi 28cm\r\nTổng dung tích 14L\r\nTrọng lượng nồi 4.97Kg\r\nChiều cao nồi 24cm\r\nThước đo mực nước đến 12.5L\r\nVung inox thiết kế lõm lòng chảo giúp đối lưu hơi nước, chịu được 220ºC\r\nTay cầm cách nhiệt, thiết kế thẩm mỹ dạng đũa, cầm nắm thoải mái, chịu lực 150Kg\r\nMiệng rót chống tràn hiệu quả, cực khít với vung\r\nHiệu quả đun nấu nhanh, bảo toàn dinh dưỡng\r\nNồi nấu được trong lò nướng và vệ sinh an toàn với máy rửa bát.', 11500000, 'images/1639849625.jpg', 3),
 (5, 'Bộ nồi chảo Silit Pisa 10 Món', 'Nắp vung kính cường lực bền đẹp thuận tiện quan sát đồ ăn\r\nPhù hợp với mọi loại: bếp từ, bếp hồng ngoại…\r\nTỏa nhiệt đều, giữ nhiệt lâu\r\nAn toàn cho sức khỏe\r\nĐáy 3 lớp bắt từ nhanh giúp tiết kiệm điện\r\nXuất xứ: Nhập khẩu từ Đức', 6540000, 'images/1639849720.1000x1000', 4),
@@ -198,7 +290,8 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `manufact
 (27, 'bbhjbjhbchjasbcjh', 'sdbhcjbajsdbhcjbaj', 50, 'images/1643210140.png', 3),
 (28, 'bbhjbjhbchjasbcjh', 'sdbhcjbajsdbhcjbaj', 50, 'images/1643210154.png', 3),
 (29, 'csacsacsacsacsacasc', 'cascsacsacsacsacsacsac', 34, 'images/1643374463.png', 4),
-(30, 'cacsacsacascsacasOKE', 'vsdvsvsdvdsvdsvdsvdvs', 34, 'images/1643374734.png', 3);
+(32, 'okOKEsca', 'dvdscas4acsasc5', 50, 'images/1643535885.png', 3),
+(33, 'san pham moi', '1cas56c1sa65c1as65', 50, 'images/1644299379.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -216,15 +309,13 @@ CREATE TABLE `product_type` (
 --
 
 INSERT INTO `product_type` (`product_id`, `type_id`) VALUES
-(28, 1),
-(28, 2),
-(30, 5),
-(30, 6),
-(30, 7),
-(30, 8),
-(30, 9),
-(30, 10),
-(30, 30);
+(4, 19),
+(2, 20),
+(13, 21),
+(11, 22),
+(2, 23),
+(6, 23),
+(10, 23);
 
 -- --------------------------------------------------------
 
@@ -248,12 +339,12 @@ CREATE TABLE `receipts` (
 --
 
 INSERT INTO `receipts` (`id`, `customer_id`, `receiver_name`, `receiver_phone`, `receiver_address`, `status`, `order_time`, `total_price`) VALUES
-(8, 2, 'hydra ', '0123456789', 'Le Loi', 6, '2022-01-24 11:53:52', 43954000),
-(9, 2, 'Huu Loc', '0159478236', 'Nguyen Hue', 6, '2022-02-02 08:18:35', 5568000),
-(10, 2, 'Kim Hue', '0369852147', 'Gia Lai', 6, '2022-12-22 08:19:03', 23280000),
-(11, 1, 'Huu Loc', '012346798', 'Le Loi', 6, '2022-12-21 09:53:36', 499000),
-(12, 1, 'Nguyen Ti', '015947826', 'Nguyen Thai Hoc', 0, '2022-12-26 09:53:58', 11899000),
-(13, 16, 'Ho Ngoc Han', '0065165165', 'Nguyen Thai Hoc', 1, '2022-12-05 09:56:34', 649000);
+(8, 2, 'hydra ', '0123456789', 'Le Loi', 3, '2022-01-24 11:53:52', 43954000),
+(9, 2, 'Huu Loc', '0159478236', 'Nguyen Hue', 2, '2022-02-02 08:18:35', 5568000),
+(10, 2, 'Kim Hue', '0369852147', 'Gia Lai', 2, '2022-01-20 12:03:00', 23280000),
+(11, 1, 'Huu Loc', '012346798', 'Le Loi', 4, '2022-12-21 09:53:36', 499000),
+(12, 1, 'Nguyen Ti', '015947826', 'Nguyen Thai Hoc', 2, '2022-12-26 09:53:58', 11899000),
+(13, 16, 'Ho Ngoc Han', '0065165165', 'Nguyen Thai Hoc', 3, '2022-12-05 09:56:34', 649000);
 
 -- --------------------------------------------------------
 
@@ -305,14 +396,14 @@ CREATE TABLE `types` (
 --
 
 INSERT INTO `types` (`id`, `name`) VALUES
-(10, 'as'),
-(5, 'bca'),
-(9, 'c'),
-(8, 'csa'),
-(2, 'nấu ăn'),
-(1, 'nhà cửa'),
-(7, 'sa'),
-(6, 'sc');
+(20, 'Cây lau nhà'),
+(18, 'Chảo'),
+(17, 'Chổi'),
+(22, 'Máy hút bụi'),
+(19, 'Nhà bếp'),
+(16, 'Nồi cơm'),
+(23, 'Vật dụng WC'),
+(21, 'Đèn');
 
 --
 -- Indexes for dumped tables
@@ -362,7 +453,8 @@ ALTER TABLE `products`
 -- Indexes for table `product_type`
 --
 ALTER TABLE `product_type`
-  ADD PRIMARY KEY (`product_id`,`type_id`);
+  ADD PRIMARY KEY (`product_id`,`type_id`),
+  ADD KEY `type_id` (`type_id`);
 
 --
 -- Indexes for table `receipts`
@@ -406,13 +498,13 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `manufacturers`
 --
 ALTER TABLE `manufacturers`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `receipts`
@@ -424,7 +516,7 @@ ALTER TABLE `receipts`
 -- AUTO_INCREMENT for table `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Constraints for dumped tables
@@ -441,6 +533,13 @@ ALTER TABLE `forgot_password`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`manufacturer_id`) REFERENCES `manufacturers` (`id`);
+
+--
+-- Constraints for table `product_type`
+--
+ALTER TABLE `product_type`
+  ADD CONSTRAINT `product_type_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `product_type_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `receipts`
