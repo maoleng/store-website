@@ -48,17 +48,15 @@
 		<option class="option_month" value="3">Tháng</option>
 	</select>
 	<br>
-	<form id = "form_select_date">
-		<input type="date" name = "day_to_day_1" id = "input_day_to_day_1" hidden>
+	<form>
+		<input type="date"  id = "input_day_to_day_1" hidden>
 		<br>
-		<input type="date" name = "day_to_day_2" id = "input_day_to_day_2" hidden>
-		<input type="number" name = "days_ago" id = "input_days_ago" hidden>
-		<input type="month" name = "month" id = "input_month" hidden>
-		<br>
-		<button>
-			OKe
-		</button>
+		<input type="date"  id = "input_day_to_day_2" hidden>
+		<p id = "tips" hidden>Chọn xong rồi click chuột ra ngoài để thấy biểu đồ</p>
+		<input type="number"  id = "input_days_ago" hidden>
+		<input type="month"  id = "input_month" hidden>
 	</form>
+	
 	<figure class="highcharts-figure">
 		<div id="container_1"></div>
 	</figure>
@@ -75,6 +73,11 @@
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+$("form").keypress(function(event) {
+	if ( event.keyCode === 13 ) {
+		event.preventDefault()
+	}
+})
 $('select').on('change', function (e) {
     var optionSelected = $("option:selected", this);
     var valueSelected = this.value;
@@ -82,11 +85,13 @@ $('select').on('change', function (e) {
     	case "1":
     		$("#input_day_to_day_1").show()
     		$("#input_day_to_day_2").show()
+    		$("#tips").hide()
     		$("#input_days_ago").hide()
     		$("#input_month").hide()
     		break
     	case "2":
     		$("#input_days_ago").show()
+    		$("#tips").show()
     		$("#input_day_to_day_1").hide()
     		$("#input_day_to_day_2").hide()
     		$("#input_month").hide()
@@ -94,13 +99,13 @@ $('select').on('change', function (e) {
     	case "3":
 			$("#input_month").show()
     		$("#input_days_ago").hide()
+    		$("#tips").hide()
     		$("#input_day_to_day_1").hide()
     		$("#input_day_to_day_2").hide()
     		break	
     }
 
-$("#form_select_date").submit(function(event) {
-	event.preventDefault()
+$("#input_month, #input_days_ago, #input_day_to_day_1, #input_day_to_day_2").change(function(event) {
 	switch ( valueSelected ) {
 		case "1":
 		var day_to_day_1 = $("#input_day_to_day_1").val()
@@ -126,7 +131,7 @@ $("#form_select_date").submit(function(event) {
 
 		case "2":
 		var days = $("#input_days_ago").val()
-		var header_chart = " trong " + days + " gần đây"
+		var header_chart = " trong " + days + " ngày gần đây"
 		$.ajax({
 			url: 'get_products_sold.php',
 			type: 'get',
