@@ -30,10 +30,12 @@ image = '$image' where id = '$id' ";
 mysqli_query($connect_database, $sql_command_update);
 
 //insert vào bảng activity
-$person = $_SESSION['name'];
-$activity_log = "$person đã cập nhật nhà sản xuất $name" ;
+$admin_id = $_SESSION['id'];
+$admin_name = $_SESSION['name'];
+$activity = "cập nhật";
+$object = "nhà cung cấp";
+$object_name = $name;
 require '../activity_log/insert_activity.php';
-
 
 $error = mysqli_error($connect_database);
 mysqli_close($connect_database);
