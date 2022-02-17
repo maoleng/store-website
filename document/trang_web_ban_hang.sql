@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Feb 10, 2022 at 11:37 AM
--- Server version: 8.0.27
--- PHP Version: 7.4.19
+-- Máy chủ: localhost:3306
+-- Thời gian đã tạo: Th2 17, 2022 lúc 08:48 AM
+-- Phiên bản máy phục vụ: 8.0.27
+-- Phiên bản PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,125 +18,98 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `trang_web_ban_hang`
+-- Cơ sở dữ liệu: `trang_web_ban_hang`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `activities`
+-- Cấu trúc bảng cho bảng `activities`
 --
 
 CREATE TABLE `activities` (
   `id` int NOT NULL,
-  `activity` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `admin_id` int NOT NULL,
+  `activity` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `object` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `object_name` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `activities`
+-- Đang đổ dữ liệu cho bảng `activities`
 --
 
-INSERT INTO `activities` (`id`, `activity`, `time`) VALUES
-(3, 'superadmin đã thêm sản phẩm Nhà sản xuất mới', '2022-01-29 15:57:05'),
-(4, 'superadmin đã thêm nhà sản xuất Vinamilk', '2022-01-29 16:04:23'),
-(6, 'superadmin đã cập nhật nhà sản xuất Fissler', '2022-01-30 09:36:59'),
-(7, 'superadmin đã xóa nhà sản xuất csaacssacsaccsacsasca', '2022-01-30 09:38:46'),
-(8, 'superadmin đã xóa sản phẩm cacsacsacascsacasOKE', '2022-01-30 09:40:35'),
-(9, 'superadmin đã thêm sản phẩm ', '2022-01-30 09:43:43'),
-(10, 'superadmin đã xóa sản phẩm cacsasaccsasacsaccsa', '2022-01-30 09:44:30'),
-(11, 'superadmin đã thêm sản phẩm okOKEsca', '2022-01-30 09:44:45'),
-(12, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMX CL005555 ', '2022-01-30 09:45:38'),
-(16, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMX CL0055 ', '2022-01-31 05:03:06'),
-(17, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đã giao', '2022-01-31 05:04:38'),
-(18, 'superadmin đã hủy đơn hàng số 9', '2022-01-31 05:04:43'),
-(19, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMX CL005 ', '2022-01-31 05:12:51'),
-(20, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMX CL0055 ', '2022-01-31 05:12:54'),
-(21, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMX CL00555 ', '2022-01-31 05:12:59'),
-(22, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đang giao', '2022-01-31 16:08:52'),
-(23, 'superadmin đã cập nhật trạng thái của đơn hàng số 9 thành trạng thái đang giao', '2022-01-31 16:08:59'),
-(24, 'superadmin đã cập nhật nhà sản xuất Fisslerrrr', '2022-02-07 14:03:26'),
-(25, 'superadmin đã cập nhật sản phẩm Cây lau nhà DMXxx CL00555 ', '2022-02-07 14:59:12'),
-(26, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đã giao', '2022-02-07 15:07:50'),
-(27, 'superadmin đã hủy đơn hàng số 12', '2022-02-07 15:12:28'),
-(28, 'superadmin đã thêm sản phẩm san pham moi', '2022-02-08 05:49:39'),
-(29, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đã giao', '2022-02-08 19:51:00'),
-(30, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 19:55:28'),
-(31, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 19:56:29'),
-(32, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 19:57:02'),
-(33, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 19:57:18'),
-(34, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 19:57:49'),
-(35, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 19:58:04'),
-(36, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:00:26'),
-(37, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:03:09'),
-(38, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:04:27'),
-(39, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:05:11'),
-(40, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:09:17'),
-(41, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:09:40'),
-(42, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:10:03'),
-(43, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:10:29'),
-(44, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:10:45'),
-(45, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:10:58'),
-(46, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:11:07'),
-(47, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:11:15'),
-(48, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:11:37'),
-(49, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-08 20:11:41'),
-(50, 'superadmin đã cập nhật trạng thái của đơn hàng số 12 thành trạng thái đang giao', '2022-02-08 20:12:45'),
-(51, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đang giao', '2022-02-08 20:13:36'),
-(52, 'superadmin đã hủy đơn hàng số 8', '2022-02-08 20:13:58'),
-(53, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 14:52:07'),
-(54, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 14:52:43'),
-(55, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đã giao', '2022-02-09 14:52:58'),
-(56, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 14:53:32'),
-(57, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đã giao', '2022-02-09 14:53:57'),
-(58, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 14:54:39'),
-(59, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đã giao', '2022-02-09 14:54:52'),
-(60, 'superadmin đã cập nhật trạng thái của đơn hàng số 10 thành trạng thái đã giao', '2022-02-09 14:55:42'),
-(61, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đang giao', '2022-02-09 14:57:24'),
-(62, 'superadmin đã cập nhật trạng thái của đơn hàng số 9 thành trạng thái đang giao', '2022-02-09 14:57:41'),
-(63, 'superadmin đã cập nhật trạng thái của đơn hàng số 10 thành trạng thái đang giao', '2022-02-09 14:57:59'),
-(64, 'superadmin đã cập nhật trạng thái của đơn hàng số 9 thành trạng thái đã giao', '2022-02-09 14:58:20'),
-(65, 'superadmin đã cập nhật trạng thái của đơn hàng số 10 thành trạng thái đang giao', '2022-02-09 14:58:32'),
-(66, 'superadmin đã cập nhật trạng thái của đơn hàng số 9 thành trạng thái đang giao', '2022-02-09 14:58:44'),
-(67, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đang giao', '2022-02-09 15:01:29'),
-(68, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đang giao', '2022-02-09 15:02:36'),
-(69, 'superadmin đã cập nhật trạng thái của đơn hàng số 10 thành trạng thái đang giao', '2022-02-09 15:06:00'),
-(70, 'superadmin đã cập nhật trạng thái của đơn hàng số 9 thành trạng thái đang giao', '2022-02-09 15:06:02'),
-(71, 'superadmin đã cập nhật trạng thái của đơn hàng số 10 thành trạng thái đã giao', '2022-02-09 15:06:03'),
-(72, 'superadmin đã cập nhật trạng thái của đơn hàng số 8 thành trạng thái đã giao', '2022-02-09 15:07:24'),
-(73, 'superadmin đã hủy đơn hàng số 12', '2022-02-09 15:07:26'),
-(74, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 15:08:45'),
-(75, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đã giao', '2022-02-09 15:08:47'),
-(76, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đang giao', '2022-02-09 15:35:10'),
-(77, 'superadmin đã cập nhật trạng thái của đơn hàng số 13 thành trạng thái đã giao', '2022-02-09 15:35:12'),
-(78, 'superadmin đã hủy đơn hàng số 13', '2022-02-09 15:39:35'),
-(79, 'superadmin đã hủy đơn hàng số 8', '2022-02-09 15:40:35'),
-(80, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuu', '2022-02-10 05:51:27'),
-(81, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 05:51:47'),
-(82, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuu', '2022-02-10 05:52:16'),
-(83, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 05:52:33'),
-(84, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuu', '2022-02-10 05:53:25'),
-(85, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuuu', '2022-02-10 05:54:52'),
-(86, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 05:55:38'),
-(87, 'superadmin đã cập nhật trạng thái của đơn hàng số 11 thành trạng thái đang giao', '2022-02-10 05:56:59'),
-(88, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuuu', '2022-02-10 06:08:54'),
-(89, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:09:09'),
-(90, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuuu', '2022-02-10 06:09:36'),
-(91, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầuuuu', '2022-02-10 06:10:13'),
-(92, 'superadmin đã cập nhật sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:10:42'),
-(93, 'superadmin đã xóa sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:11:14'),
-(94, 'superadmin đã xóa sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:13:56'),
-(95, 'superadmin đã xóa sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:14:08'),
-(96, 'superadmin đã xóa sản phẩm Bơm Thông hút bồn cầu', '2022-02-10 06:14:28'),
-(97, 'superadmin đã xóa sản phẩm csacsacsacsacsacasc', '2022-02-10 09:28:32'),
-(98, 'superadmin đã xóa sản phẩm csacsacsacsacsacasc', '2022-02-10 09:28:34'),
-(99, 'superadmin đã xóa sản phẩm Cây lau nhà DMXxx CL00555 ', '2022-02-10 10:03:36'),
-(100, 'superadmin đã xóa sản phẩm Cây lau nhà DMXxx CL00555 ', '2022-02-10 10:03:37');
+INSERT INTO `activities` (`id`, `admin_id`, `activity`, `object`, `object_name`, `time`) VALUES
+(1, 1, 'thêm', 'sản phẩm', 'Cây lau nhà', '2022-02-17 03:15:13'),
+(2, 1, 'cập nhật', 'đơn hàng', 'số 3', '2022-02-17 03:15:13'),
+(3, 2, 'thêm', 'nhà cung cấp', 'sản sản', '2022-02-17 03:27:51'),
+(4, 2, 'xóa', 'nhà cung cấp', '', '2022-02-17 03:37:44'),
+(5, 2, 'thêm', 'nhà cung cấp', 'cascsacacasccacascas', '2022-02-17 03:40:32'),
+(6, 2, 'xóa', 'nhà cung cấp', 'cascsacacasccacascas', '2022-02-17 03:40:39'),
+(7, 2, 'cập nhật', 'nhà cung cấp', 'số 3', '2022-02-17 03:43:45'),
+(8, 2, 'thêm', 'sản phẩm', 'Sản phẩm mới nhất', '2022-02-17 03:47:39'),
+(9, 2, 'thêm', 'sản phẩm', 'Cây chổi new', '2022-02-17 03:49:57'),
+(10, 2, 'thêm', 'thẻ', 'thẻ mới', '2022-02-17 03:49:57'),
+(11, 2, 'thêm', 'thẻ', 'thẻ oke', '2022-02-17 03:49:57'),
+(12, 2, 'cập nhật', 'nhà cung cấp', 'Fisslerrrr', '2022-02-17 04:04:01'),
+(13, 2, 'cập nhật', 'sản phẩm', 'Cây lau nh5555555 ', '2022-02-17 04:04:34'),
+(14, 2, 'xóa', 'sản phẩm', 'Cây chổi new', '2022-02-17 04:05:44'),
+(15, 2, 'duyệt', 'đơn hàng', 'số 10', '2022-02-17 04:08:46'),
+(16, 2, 'hoàn thành', 'đơn hàng', 'số 10', '2022-02-17 04:08:52'),
+(17, 2, 'hủy', 'đơn hàng', 'số 12', '2022-02-17 04:08:58'),
+(18, 2, 'xóa', 'thẻ', 'khỏi sản phẩm Cây lau nh5555555 ', '2022-02-17 04:16:30'),
+(19, 2, 'xóa', 'thẻ', '', '2022-02-17 04:19:07'),
+(20, 2, 'xóa', 'thẻ', 'thẻ mới', '2022-02-17 04:19:19'),
+(21, 2, 'xóa', 'sản phẩm', 'Cây chổi new', '2022-02-17 04:19:22'),
+(22, 2, 'xóa', 'thẻ', 'khỏi sản phẩm Cây chổi new', '2022-02-17 04:19:25'),
+(23, 2, 'xóa', 'sản phẩm', 'Cây chổi new', '2022-02-17 04:20:33'),
+(24, 2, 'xóa', 'sản phẩm', 'san pham moi', '2022-02-17 04:21:17'),
+(25, 2, 'xóa', 'sản phẩm', 'san pham moi', '2022-02-17 04:21:23'),
+(26, 2, 'xóa', 'sản phẩm', 'san pham moi', '2022-02-17 04:21:23'),
+(27, 2, 'xóa', 'sản phẩm', 'san pham moi', '2022-02-17 04:21:23'),
+(28, 2, 'xóa', 'sản phẩm', 'san pham moi', '2022-02-17 04:21:23'),
+(29, 2, 'xóa', 'sản phẩm', 'san pham moi', '2022-02-17 04:30:25'),
+(30, 2, 'xóa', 'thẻ', 'khỏi sản phẩm san pham moi', '2022-02-17 04:34:01'),
+(31, 2, 'xóa', 'thẻ', '', '2022-02-17 04:40:15'),
+(32, 2, 'xóa', 'thẻ', 'cacsac', '2022-02-17 04:42:01'),
+(33, 2, 'xóa', 'thẻ', 'cacsac khỏi sản phẩm Cây lau nh5555555 ', '2022-02-17 04:42:06'),
+(34, 2, 'xóa', 'thẻ', '', '2022-02-17 04:42:15'),
+(35, 2, 'xóa', 'thẻ', 'cs khỏi sản phẩm Cây lau nh5555555 ', '2022-02-17 04:43:46'),
+(36, 2, 'xóa', 'thẻ', '', '2022-02-17 04:43:50'),
+(37, 2, 'xóa', 'thẻ', '', '2022-02-17 04:47:30'),
+(38, 2, 'xóa', 'thẻ', 'sc khỏi sản phẩm Cây lau nh5555555 ', '2022-02-17 04:48:11'),
+(39, 2, 'xóa', 'thẻ', 'sc', '2022-02-17 04:48:19'),
+(40, 2, 'đổi tên', 'thẻ', ' thành Vật dụng WCC', '2022-02-17 04:58:28'),
+(41, 2, 'đổi tên', 'thẻ', ' thành Vật dụng WC', '2022-02-17 04:58:48'),
+(42, 2, 'đổi tên', 'thẻ', 'Vật dụng WC thành Vật dụng WCCCCC', '2022-02-17 04:59:36'),
+(43, 2, 'đổi tên', 'thẻ', 'Vật dụng WCCCCC thành Vật dụng WC', '2022-02-17 04:59:41'),
+(44, 2, 'xóa', 'thẻ', 'ác', '2022-02-17 05:05:36'),
+(45, 2, 'xóa', 'thẻ', 'ác khỏi sản phẩm Cây lau nh5555555 ', '2022-02-17 05:05:39'),
+(46, 2, 'xóa', 'thẻ', 'ác', '2022-02-17 05:05:45'),
+(47, 2, 'xóa', 'thẻ', 'sacasc khỏi sản phẩm Cây lau nh5555555 ', '2022-02-17 05:12:02'),
+(48, 2, 'xóa', 'thẻ', 'sacasc', '2022-02-17 05:12:05'),
+(49, 2, 'xóa', 'thẻ', 'sac khỏi sản phẩm Cây lau nh5555555 ', '2022-02-17 05:12:08'),
+(50, 2, 'xóa', 'thẻ', 'sac', '2022-02-17 05:12:10'),
+(51, 2, 'xóa', 'thẻ', 'csa', '2022-02-17 05:12:51'),
+(52, 2, 'xóa', 'thẻ', 'sa', '2022-02-17 05:12:51'),
+(53, 2, 'xóa', 'thẻ', 'asc', '2022-02-17 05:12:52'),
+(54, 2, 'xóa', 'thẻ', 'cnasjkcnajcc', '2022-02-17 05:12:53'),
+(55, 2, 'xóa', 'thẻ', 'csa', '2022-02-17 05:14:14'),
+(56, 2, 'xóa', 'thẻ', 'as', '2022-02-17 05:14:14'),
+(57, 2, 'thêm', 'thẻ', 'sac', '2022-02-17 05:16:16'),
+(58, 2, 'thêm', 'thẻ', 'sac vào Cây lau nh5555555 ', '2022-02-17 05:16:16'),
+(59, 2, 'thêm', 'thẻ', 'sa vào Cây lau nh5555555 ', '2022-02-17 05:16:16'),
+(60, 2, 'thêm', 'thẻ', 'ca vào Cây lau nh5555555 ', '2022-02-17 05:16:16'),
+(61, 2, 'thêm', 'thẻ', 'Nhà bếp vào Nồi cơm điện Sunhouse 1.8L SHD8602', '2022-02-17 05:25:01'),
+(62, 2, 'xóa', 'thẻ', 'Nhà bếp khỏi sản phẩm Cây lau nh5555555 ', '2022-02-17 05:28:41'),
+(63, 2, 'thêm', 'thẻ', 'Nhà bếp vào Cây lau nh5555555 ', '2022-02-17 05:30:28'),
+(64, 2, 'xóa', 'thẻ', 'Nhà bếp khỏi sản phẩm Cây lau nhà COTONG 90CM SIÊU SẠCH BODOCA', '2022-02-17 05:30:37');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Cấu trúc bảng cho bảng `admins`
 --
 
 CREATE TABLE `admins` (
@@ -148,7 +121,7 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admins`
+-- Đang đổ dữ liệu cho bảng `admins`
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `level`) VALUES
@@ -158,7 +131,7 @@ INSERT INTO `admins` (`id`, `name`, `email`, `password`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Cấu trúc bảng cho bảng `customers`
 --
 
 CREATE TABLE `customers` (
@@ -174,7 +147,7 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `customers`
+-- Đang đổ dữ liệu cho bảng `customers`
 --
 
 INSERT INTO `customers` (`id`, `name`, `gender`, `dob`, `email`, `phone`, `address`, `password`, `token`) VALUES
@@ -206,7 +179,7 @@ INSERT INTO `customers` (`id`, `name`, `gender`, `dob`, `email`, `phone`, `addre
 -- --------------------------------------------------------
 
 --
--- Table structure for table `forgot_password`
+-- Cấu trúc bảng cho bảng `forgot_password`
 --
 
 CREATE TABLE `forgot_password` (
@@ -218,7 +191,7 @@ CREATE TABLE `forgot_password` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `manufacturers`
+-- Cấu trúc bảng cho bảng `manufacturers`
 --
 
 CREATE TABLE `manufacturers` (
@@ -230,7 +203,7 @@ CREATE TABLE `manufacturers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `manufacturers`
+-- Đang đổ dữ liệu cho bảng `manufacturers`
 --
 
 INSERT INTO `manufacturers` (`id`, `name`, `address`, `phone`, `image`) VALUES
@@ -245,7 +218,7 @@ INSERT INTO `manufacturers` (`id`, `name`, `address`, `phone`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -258,11 +231,11 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `manufacturer_id`) VALUES
-(2, 'Cây lau nhà DMXxx CL00555 ', 'Cây lau nhà có thân bằng inoxx cứng cáp, chiều dài 128 cm dễ sử dụng.\r\nTay cầm bọc nhựa chống trơn trượt, thân cây có khóa chắc chắn, có móc treo cất giữ.\r\nBông lau nhà bằng sợi cotton bền chắc, thấm hút tốt, giặt rửa dễ dàng.\r\nThương hiệu DMX - độc quyền Điện máy XANH, sản xuất tại Việt Nam.', 40000, 'images/1639849341.jpg', 8),
+(2, 'Cây lau nh5555555 ', 'Cây lau nhà có thân bằng inoxx cứng cáp, chiều dài 128 cm dễ sử dụng.\r\nTay cầm bọc nhựa chống trơn trượt, thân cây có khóa chắc chắn, có móc treo cất giữ.\r\nBông lau nhà bằng sợi cotton bền chắc, thấm hút tốt, giặt rửa dễ dàng.\r\nThương hiệu DMX - độc quyền Điện máy XANH, sản xuất tại Việt Nam.', 40000, 'images/1639849341.jpg', 8),
 (3, 'Cây lau nhà xoay 360 ĐỘ SUNHOUSE KS-MO350I', 'Chất liệu cao cấp, an toàn cho sức khỏe\r\nCán bằng inox 201 có tay cầm bọc nhựa PP chắc chắn\r\nBộ phận tạo chuyển động bằng thép và nhựa POM siêu bền\r\nBông lau bằng sợi Microfiber thấm hút nước tốt', 459000, 'images/1639849505.jpg', 9),
 (4, 'Nồi từ FISSLER PRO COLLECTION HIGH STOCK POT 28CM 14L', 'Nhập khẩu nguyên chiếc CHLB Đức - Made in Germany\r\nNồi từ Fissler làm từ vật liệu thép không gỉ chất lượng cao 18/10 dày, đặc, truyền nhiệt hiệu quả\r\nĐáy nồi Cookstar Allstove, nấu được trên mọi loại bếp, kể cả bếp từ, hạn chế cháy cục bộ, không cong vênh, lồi lõm\r\nLõi nhôm dày hoa lỏng ở 600ºC trước khi dập các lớp với nhau bởi một lực 1500 tấn\r\nĐường kính nồi 28cm\r\nTổng dung tích 14L\r\nTrọng lượng nồi 4.97Kg\r\nChiều cao nồi 24cm\r\nThước đo mực nước đến 12.5L\r\nVung inox thiết kế lõm lòng chảo giúp đối lưu hơi nước, chịu được 220ºC\r\nTay cầm cách nhiệt, thiết kế thẩm mỹ dạng đũa, cầm nắm thoải mái, chịu lực 150Kg\r\nMiệng rót chống tràn hiệu quả, cực khít với vung\r\nHiệu quả đun nấu nhanh, bảo toàn dinh dưỡng\r\nNồi nấu được trong lò nướng và vệ sinh an toàn với máy rửa bát.', 11500000, 'images/1639849625.jpg', 3),
 (5, 'Bộ nồi chảo Silit Pisa 10 Món', 'Nắp vung kính cường lực bền đẹp thuận tiện quan sát đồ ăn\r\nPhù hợp với mọi loại: bếp từ, bếp hồng ngoại…\r\nTỏa nhiệt đều, giữ nhiệt lâu\r\nAn toàn cho sức khỏe\r\nĐáy 3 lớp bắt từ nhanh giúp tiết kiệm điện\r\nXuất xứ: Nhập khẩu từ Đức', 6540000, 'images/1639849720.1000x1000', 4),
@@ -291,12 +264,13 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `manufact
 (28, 'bbhjbjhbchjasbcjh', 'sdbhcjbajsdbhcjbaj', 50, 'images/1643210154.png', 3),
 (29, 'csacsacsacsacsacasc', 'cascsacsacsacsacsacsac', 34, 'images/1643374463.png', 4),
 (32, 'okOKEsca', 'dvdscas4acsasc5', 50, 'images/1643535885.png', 3),
-(33, 'san pham moi', '1cas56c1sa65c1as65', 50, 'images/1644299379.jpg', 3);
+(33, 'san pham moi', '1cas56c1sa65c1as65', 50, 'images/1644299379.jpg', 3),
+(34, 'Sản phẩm mới nhất', 'c1as56c1sa65c1sa6c1as65c1as65', 50, 'images/1645069659.jpg', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_type`
+-- Cấu trúc bảng cho bảng `product_type`
 --
 
 CREATE TABLE `product_type` (
@@ -305,22 +279,25 @@ CREATE TABLE `product_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `product_type`
+-- Đang đổ dữ liệu cho bảng `product_type`
 --
 
 INSERT INTO `product_type` (`product_id`, `type_id`) VALUES
-(4, 19),
+(2, 19),
+(7, 19),
 (2, 20),
 (13, 21),
 (11, 22),
-(2, 23),
+(34, 22),
+(3, 23),
 (6, 23),
-(10, 23);
+(2, 43),
+(2, 44);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `receipts`
+-- Cấu trúc bảng cho bảng `receipts`
 --
 
 CREATE TABLE `receipts` (
@@ -335,21 +312,21 @@ CREATE TABLE `receipts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `receipts`
+-- Đang đổ dữ liệu cho bảng `receipts`
 --
 
 INSERT INTO `receipts` (`id`, `customer_id`, `receiver_name`, `receiver_phone`, `receiver_address`, `status`, `order_time`, `total_price`) VALUES
 (8, 2, 'hydra ', '0123456789', 'Le Loi', 3, '2022-01-24 11:53:52', 43954000),
-(9, 2, 'Huu Loc', '0159478236', 'Nguyen Hue', 2, '2022-02-02 08:18:35', 5568000),
-(10, 2, 'Kim Hue', '0369852147', 'Gia Lai', 2, '2022-01-20 12:03:00', 23280000),
-(11, 1, 'Huu Loc', '012346798', 'Le Loi', 4, '2022-12-21 09:53:36', 499000),
-(12, 1, 'Nguyen Ti', '015947826', 'Nguyen Thai Hoc', 2, '2022-12-26 09:53:58', 11899000),
-(13, 16, 'Ho Ngoc Han', '0065165165', 'Nguyen Thai Hoc', 3, '2022-12-05 09:56:34', 649000);
+(9, 2, 'Huu Loc', '0159478236', 'Nguyen Hue', 5, '2022-02-02 08:18:35', 5568000),
+(10, 2, 'Kim Hue', '0369852147', 'Gia Lai', 5, '2022-01-20 12:03:00', 23280000),
+(11, 1, 'Huu Loc', '012346798', 'Le Loi', 4, '2022-01-21 09:53:36', 499000),
+(12, 1, 'Nguyen Ti', '015947826', 'Nguyen Thai Hoc', 3, '2021-12-26 09:53:58', 11899000),
+(13, 16, 'Ho Ngoc Han', '0065165165', 'Nguyen Thai Hoc', 3, '2021-12-05 09:56:34', 649000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `receipt_detail`
+-- Cấu trúc bảng cho bảng `receipt_detail`
 --
 
 CREATE TABLE `receipt_detail` (
@@ -359,7 +336,7 @@ CREATE TABLE `receipt_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `receipt_detail`
+-- Đang đổ dữ liệu cho bảng `receipt_detail`
 --
 
 INSERT INTO `receipt_detail` (`receipt_id`, `product_id`, `quantity`) VALUES
@@ -383,7 +360,7 @@ INSERT INTO `receipt_detail` (`receipt_id`, `product_id`, `quantity`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `types`
+-- Cấu trúc bảng cho bảng `types`
 --
 
 CREATE TABLE `types` (
@@ -392,37 +369,39 @@ CREATE TABLE `types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `types`
+-- Đang đổ dữ liệu cho bảng `types`
 --
 
 INSERT INTO `types` (`id`, `name`) VALUES
+(43, 'cascsa'),
 (20, 'Cây lau nhà'),
 (18, 'Chảo'),
 (17, 'Chổi'),
 (22, 'Máy hút bụi'),
 (19, 'Nhà bếp'),
 (16, 'Nồi cơm'),
+(44, 'sac'),
 (23, 'Vật dụng WC'),
 (21, 'Đèn');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `activities`
+-- Chỉ mục cho bảng `activities`
 --
 ALTER TABLE `activities`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `admins`
+-- Chỉ mục cho bảng `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `customers`
+-- Chỉ mục cho bảng `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`),
@@ -430,41 +409,41 @@ ALTER TABLE `customers`
   ADD UNIQUE KEY `email_2` (`email`);
 
 --
--- Indexes for table `forgot_password`
+-- Chỉ mục cho bảng `forgot_password`
 --
 ALTER TABLE `forgot_password`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `manufacturers`
+-- Chỉ mục cho bảng `manufacturers`
 --
 ALTER TABLE `manufacturers`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `manufacturer_id` (`manufacturer_id`);
 
 --
--- Indexes for table `product_type`
+-- Chỉ mục cho bảng `product_type`
 --
 ALTER TABLE `product_type`
   ADD PRIMARY KEY (`product_id`,`type_id`),
   ADD KEY `type_id` (`type_id`);
 
 --
--- Indexes for table `receipts`
+-- Chỉ mục cho bảng `receipts`
 --
 ALTER TABLE `receipts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `customer_id` (`customer_id`);
 
 --
--- Indexes for table `receipt_detail`
+-- Chỉ mục cho bảng `receipt_detail`
 --
 ALTER TABLE `receipt_detail`
   ADD PRIMARY KEY (`receipt_id`,`product_id`),
@@ -472,83 +451,83 @@ ALTER TABLE `receipt_detail`
   ADD KEY `receipt_detail_ibfk_1` (`product_id`);
 
 --
--- Indexes for table `types`
+-- Chỉ mục cho bảng `types`
 --
 ALTER TABLE `types`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT cho bảng `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `manufacturers`
+-- AUTO_INCREMENT cho bảng `manufacturers`
 --
 ALTER TABLE `manufacturers`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
--- AUTO_INCREMENT for table `receipts`
+-- AUTO_INCREMENT cho bảng `receipts`
 --
 ALTER TABLE `receipts`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `types`
+-- AUTO_INCREMENT cho bảng `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `forgot_password`
+-- Các ràng buộc cho bảng `forgot_password`
 --
 ALTER TABLE `forgot_password`
   ADD CONSTRAINT `forgot_password_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `products`
+-- Các ràng buộc cho bảng `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`manufacturer_id`) REFERENCES `manufacturers` (`id`);
 
 --
--- Constraints for table `product_type`
+-- Các ràng buộc cho bảng `product_type`
 --
 ALTER TABLE `product_type`
   ADD CONSTRAINT `product_type_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `product_type_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `receipts`
+-- Các ràng buộc cho bảng `receipts`
 --
 ALTER TABLE `receipts`
   ADD CONSTRAINT `receipts_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `receipt_detail`
+-- Các ràng buộc cho bảng `receipt_detail`
 --
 ALTER TABLE `receipt_detail`
   ADD CONSTRAINT `receipt_detail_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
