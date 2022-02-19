@@ -152,7 +152,7 @@ $(document).ready(function() {
 		  },
 
 		  xAxis: {
-	        categories: arrayY
+	        categories: arrayX
 		  },
 
 		  legend: {
