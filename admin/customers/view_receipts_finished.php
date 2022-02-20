@@ -10,7 +10,11 @@
 
 
 <?php 
+$id = $_GET['id'];
 require '../connect_database.php';
+
+$sql_select_name = "SELECT name FROM customers WHERE id = '$id'";
+$name = mysqli_fetch_array(mysqli_query($connect_database, $sql_select_name))['name'] ;
 
 if (isset($_GET['index'])) {
 	$i = $_GET['index'];
@@ -20,7 +24,7 @@ if (isset($_GET['index'])) {
 
 
 //lấy ra tổng số hóa đơn
-$sql_command_select_receipts = "select count(*) from receipts where status = 2 or status = 4";
+$sql_command_select_receipts = "select count(*) from receipts where (status = 3 or status = 7 or status = 5) and customer_id = '$id' ";
 $query_sql_command_select_receipts = mysqli_query($connect_database, $sql_command_select_receipts);
 $count_receipts = mysqli_fetch_array($query_sql_command_select_receipts)['count(*)'];
 
@@ -38,11 +42,13 @@ $skip_receipts_page = ( $i - 1 ) * $receipts_on_page;
 $sql_command_select = "SELECT receipts.*, customers.name as 'customer_name', customers.email as 'customer_email', customers.phone as 'customer_phone' 
 from receipts
 JOIN customers on customers.id = receipts.customer_id
-WHERE receipts.status in (2, 4)
+WHERE receipts.status in (3, 5, 7) and customer_id = '$id'
 limit $receipts_on_page offset $skip_receipts_page";
 
 $query_sql_command_select = mysqli_query($connect_database, $sql_command_select);
-
+if ( mysqli_num_rows($query_sql_command_select) != 0 ) {
+	$customer_id = mysqli_fetch_array($query_sql_command_select)['customer_id'];
+}
 
  ?>
 	
@@ -66,9 +72,9 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 
 <div class = "bot">
 	<div class = "header">
-		<h1 class =  "header" >ĐƠN HÀNG CHƯA XỬ LÍ</h1>
+		<h1 class =  "header" >ĐƠN HÀNG ĐÃ XỬ LÍ CỦA <?php echo $name ?></h1>
 	</div>
-	-> <a href = "view_receipts_finished.php">XEM ĐƠN HÀNG ĐÃ XỬ LÍ</a>
+	-> <a href = "view_receipt.php?id=<?php echo $id ?>">XEM ĐƠN HÀNG CHƯA XỬ LÍ CỦA <?php echo $name ?></a>
 	<br>
 
 	<?php require '../validate.php' ?>
@@ -81,11 +87,11 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 			<th>Trạng thái</th>
 			<th>Tổng tiền</th>
 			<th>Xem chi tiết</th>
-			<th>Duyệt</th>
+			<th>Sửa chữa lỗi lầm</th>
 		</tr>
 
 		<?php foreach ($query_sql_command_select as $each_receipt) : ?>
-		<?php if ($each_receipt['status'] == 2 || $each_receipt['status'] == 4 ) { ?>
+		<?php if ($each_receipt['status'] == 3 || $each_receipt['status'] == 5 || $each_receipt['status'] == 7 ) { ?>
 		<tr>
 			<td><?php echo $each_receipt['id'] ?></td>
 			<td><?php echo $each_receipt['order_time'] ?></td>
@@ -100,29 +106,28 @@ $query_sql_command_select = mysqli_query($connect_database, $sql_command_select)
 			<td>
 				<?php 
 				switch ($each_receipt['status']) {
-					case 2:
-						echo 'Chưa duyệt';
+					case 3:
+						echo 'Shop đã hủy';
 						break;							
-					case 4:
-						echo 'Đang giao hàng';
+					case 7:
+						echo 'Người dùng đã hủy';
+						break;
+					case 5:
+						echo 'Giao thành công';
 						break;
 				}
 				 ?>
 			</td>
 			<td><?php echo $each_receipt['total_price'] ?></td>
 			<td>
-				<a href="detail_receipt.php?id=<?php echo $each_receipt['id'] ?>">Xem</a>
+				<a href="../receipts/detail_receipt.php?id=<?php echo $each_receipt['id'] ?>">Xem</a>
 			</td>
 			<td>
-				<?php if ( $each_receipt['status'] == 2 ) { ?>
-					<a href="update_receipt.php?id=<?php echo $each_receipt['id'] ?>&status=4">Duyệt đơn hàng</a>
+				<?php if ( $each_receipt['status'] == 5 ) { ?>
+					<a href="../receipts/update_receipt.php?id=<?php echo $each_receipt['id'] ?>&status=4a&from=customer_receipt_finished&customer_id=<?php echo $customer_id ?>">Chưa giao xong</a>
+				<?php } else if ( $each_receipt['status'] == 3 ) { ?>
+					<a href="../receipts/update_receipt.php?id=<?php echo $each_receipt['id'] ?>&status=2&from=customer_receipt_finished&customer_id=<?php echo $customer_id ?>">Không hủy nữa</a>
 				<?php } ?>
-				<br>
-				<?php if ( $each_receipt['status'] == 4 ) { ?>
-					<a href="update_receipt.php?id=<?php echo $each_receipt['id'] ?>&status=5">Giao thành công</a>
-				<?php } ?>
-				<br>
-				<a href="update_receipt.php?id=<?php echo $each_receipt['id'] ?>&status=3">Hủy đơn hàng</a>
 			</td>
 			
 		</tr>
