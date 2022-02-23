@@ -10,6 +10,12 @@
 
 <?php
 
+if (empty($_GET['id'])){
+	$_SESSION['error'] = 'Chưa nhập id nhà sản xuất cần xem sản phẩm';
+	header('location:index_manufacturers.php');
+	exit;
+}
+
 $id = $_GET['id'];
 
 require '../connect_database.php';
@@ -43,7 +49,6 @@ $count_pages = ceil($count_products / $products_per_page);
 //lấy ra số trang bỏ qua
 $count_skip_products = ($index_page - 1) * $products_per_page;
 
-
 $sql_command_select = "
 	SELECT manufacturers.id, manufacturers.name as 'manufacturer_name', products.*
 	FROM manufacturers
@@ -51,8 +56,15 @@ $sql_command_select = "
 	WHERE manufacturers.id = '$id' AND products.name like '%$content_search%' 
 	limit $products_per_page offset $count_skip_products 
 ";
+
 $query_sql_command_select = mysqli_query($connect_database, $sql_command_select);
 
+$validate_rows = mysqli_num_rows($query_sql_command_select);
+if ( empty($validate_rows) ) {
+	$_SESSION['error'] = 'Sai id nhà sản xuất cần xem sản phẩm';
+	header('location:index_manufacturers.php');
+	exit();
+}
 $manufacturer_name = mysqli_fetch_array($query_sql_command_select)['manufacturer_name'];
 ?>
 

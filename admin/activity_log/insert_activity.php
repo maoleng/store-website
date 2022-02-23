@@ -1,4 +1,5 @@
 <?php 
+require '../connect_database.php';
 $sql_select_last_id_activity = "
 	SELECT id from activities 
 	ORDER BY id DESC
@@ -12,3 +13,4 @@ $sql_insert_activities = "
 ";
 
 mysqli_query($connect_database, $sql_insert_activities);
+mysqli_close($connect_database);
