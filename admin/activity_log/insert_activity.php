@@ -13,4 +13,3 @@ $sql_insert_activities = "
 ";
 
 mysqli_query($connect_database, $sql_insert_activities);
-mysqli_close($connect_database);
