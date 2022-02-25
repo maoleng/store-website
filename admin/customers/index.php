@@ -62,7 +62,7 @@ $query_sql_select_customers = mysqli_query($connect_database, $sql_select_custom
 	</div>
 
 	<div class = "login">
-		<a class = "login" href="https://google.com">Đăng nhập</a>
+		<span>Xin chào <?php echo $_SESSION['name'] ?></span>
 	</div> 
 </div>
 
