@@ -11,7 +11,19 @@
 </head>
 
 <?php require '../connect_database.php';
+if (empty($_GET['id'])){
+	$_SESSION['error'] = 'Chưa nhập id khách hàng';
+	header('location:index.php');
+	exit;
+}
 $id = $_GET['id'];
+
+$check = mysqli_num_rows(mysqli_query($connect_database, "SELECT id FROM customers WHERE id = '$id' "));
+if ( empty($check) ) {
+	$_SESSION['error'] = 'Sai id khách hàng';
+	header('location:index.php');
+	exit;
+}
 
 $sql_select_customers = "
 	SELECT customers.*, IFNULL(sum(receipts.total_price),0) as 'money', IFNULL(MAX(receipts.order_time), 'Chưa mua lần nào') as 'last_time'
