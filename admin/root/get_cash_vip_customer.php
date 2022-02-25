@@ -1,5 +1,5 @@
 <?php 
-
+require '../check_admin_login.php';
 require '../connect_database.php';
 $sql_select = "
 	SELECT customers.name as 'name', sum(receipts.total_price) as 'cash'

@@ -1,5 +1,5 @@
 <?php 
-
+require '../check_admin_login.php';
 $max_day_of_this_month_to_get = $_GET['days'];
 
 require '../connect_database.php';

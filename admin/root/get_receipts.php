@@ -1,5 +1,5 @@
 <?php 
-
+require '../check_admin_login.php';
 
 
 if ( isset($_GET['days']) ) {
