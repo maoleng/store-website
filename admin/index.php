@@ -2,8 +2,11 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="style_validate1.css">
 </head>
+<?php require 'validate.php'; ?>
 <body>
+
 <form action = "process_login_admin.php" method="post">
 	Tài khoản
 	<input type="text" name="email"><br>
