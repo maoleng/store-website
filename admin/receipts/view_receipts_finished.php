@@ -39,6 +39,7 @@ $sql_command_select = "SELECT receipts.*, customers.name as 'customer_name', cus
 from receipts
 JOIN customers on customers.id = receipts.customer_id
 WHERE receipts.status in (3, 5, 7)
+ORDER BY receipts.order_time desc
 limit $receipts_on_page offset $skip_receipts_page";
 
 $query_sql_command_select = mysqli_query($connect_database, $sql_command_select);
