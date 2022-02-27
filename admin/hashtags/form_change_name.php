@@ -73,23 +73,7 @@ $type_name = mysqli_fetch_array($query_sql_select)['name'];
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
-<script type="text/javascript">
-	$("#form-change-name").validate({
-		rules: {
-			"name": {
-				required: true,
-				minlength: 3,
-				validate_name: true
-			}
-		},
-		messages: {
-			"name": {
-				required: "Bắt buộc nhập tên",
-				minlength: "Hãy nhập ít nhất 3 ký tự"
-			}
-		}
-	})
-</script>
+<script src="form_change_name.js.js"></script>
 
 </body>
 </html>

@@ -138,28 +138,6 @@ $query_sql_select_vip_customer = mysqli_query($connect_database, $sql_select_vip
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 	<script src="https://unpkg.com/html2canvas@1.3.2/dist/html2canvas.min.js"></script>
-	<script>
-		(() => {
-			const downloadPDFElement = document.getElementById("js-download-pdf");
-
-			downloadPDFElement.addEventListener("click", (event) => {
-				const doc = new jspdf.jsPDF({
-					format: "a4",
-					orientation: "portrait",
-					unit: "mm"
-				});
-
-				html2canvas(document.getElementById("element_to_print")).then((canvas) => {
-					const imgData = canvas.toDataURL('image/png');
-					const imgProps= doc.getImageProperties(imgData);
-					const pdfWidth = doc.internal.pageSize.getWidth();
-					const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-					doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-					doc.save(`Báo cáo-${new Date().toLocaleDateString("vi-VN")}.pdf`);
-				})
-			})
-
-		})();
-	</script>
+	<script src="script.js"></script>
 </body>
 </html>

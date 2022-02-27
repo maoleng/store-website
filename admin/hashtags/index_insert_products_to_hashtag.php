@@ -146,16 +146,7 @@ $query_sql_select = mysqli_query($connect_database, $sql_select);
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
-	$("#form-search").submit(function(event) {
-		event.preventDefault()
-		var content_search = $("#input-search").val()
-		var header = "index_insert_products_to_hashtag.php?type_id=<?php echo $type_id ?>&search=" + content_search
-		window.location = header
-	})
-})
-</script>
+<script src="index_insert_products_to_hashtag.js"></script>
 
 </body>
 </html>

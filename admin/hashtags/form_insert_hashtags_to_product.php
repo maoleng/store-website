@@ -80,35 +80,7 @@ $product_name = mysqli_fetch_array(mysqli_query($connect_database, $sql_select_p
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../products/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.js"></script>
 <script src="../products/typeahead.bundle.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-	$("form").keypress(function(event) {
-		if ( event.keyCode === 13 ) {
-			event.preventDefault()
-		}
-	})
-	var types = new Bloodhound({
-		datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-		queryTokenizer: Bloodhound.tokenizers.whitespace,
-		remote: {
-			url: 'list_type.php?q=%QUERY',
-			wildcard: '%QUERY'
-		}
-	})
-	types.initialize();
-
-	$('#type').tagsinput({
-		typeaheadjs: {
-			displayKey: 'name',
-			valueKey: 'name',
-			source: types.ttAdapter()
-		}
-	})
-
-})
-
-</script>
-
+<script src="form_insert_hashtags_to_product.js"></script>
 
 </body>
 </html>

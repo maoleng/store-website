@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" href="style_validate1.css">
-	<link rel="stylesheet" href="index3.css">
-</head>
-<body>
-
+<link rel="stylesheet" type="text/css" href="index_style.css">
+<link rel="stylesheet" href="style_validate1.css">
 <?php require 'validate.php'; ?>
-<form action = "process_login_admin.php" method="post">
-	Tài khoản
-	<input type="text" name="email"><br>
-	Mật khẩu
-	<input type="password" name="password"><br>
-	<button>Đăng nhập</button>
+<script src="https://use.typekit.net/rjb4unc.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
-</form>
 
-</body>
-</html>
+
+<div class="container">
+    <div class="logo">Đăng nhập vào vùng quản lí</div>
+    <div class="login-item">
+      <form action="process_login_admin.php" method="post" class="form form-login">
+        <div class="form-field">
+          <label class="user" for="login-username"><span class="hidden">Username</span></label>
+          <input id="login-username" type="text" name="email" class="form-input" placeholder="Username" required>
+        </div>
+
+        <div class="form-field">
+          <label class="lock" for="login-password"><span class="hidden">Password</span></label>
+          <input id="login-password" type="password" name="password" class="form-input" placeholder="Password" required>
+        </div>
+
+        <div class="form-field">
+          <input type="submit" value="Log in">
+        </div>
+      </form>
+    </div>
+</div>
