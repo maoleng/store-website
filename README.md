@@ -2,12 +2,12 @@
 
 ## Sở hữu: <a href="https://github.com/maoleng">Mao Leng</a>
 
-## Mô tả
+## Mục lục
 - [1. Lời mở đầu](#1-Loi-mo-dau)
 - [2. Giới thiệu](#2-Gioi-thieu)
 - [3. Phân tích yêu cầu người dùng](#3-Phan-tich-yeu-cau-nguoi-dung)
 - [4. Thiết kế hệ thống](#4-Thiet-ke-he-thong)
-- [5. Xem demo trang sản phẩm](#5-Xem-demo-san-pham)
+- [5. Xem demo sản phẩm](#5-Xem-demo-san-pham)
 
 ## 1 Loi mo dau
 
