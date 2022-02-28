@@ -1,5 +1,7 @@
 <h1 align="center">ĐỒ ÁN TRANG WEB BÁN HÀNG</h1>
 
+## Sở hữu: <a href="https://github.com/maoleng">Mao Leng</a>
+
 ## Mô tả
 - [1. Lời mở đầu](#1-Loi-mo-dau)
 - [2. Giới thiệu](#2-Gioi-thieu)
